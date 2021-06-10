@@ -27,10 +27,10 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Designer" />
       <motion.div
-        className="fixed inset-0 top-20 md:top-40 flex flex-col items-center origin-bottom"
+        className="fixed inset-0 top-24 flex flex-col items-center origin-bottom"
         style={{ opacity, filter }}
       >
-        <div className="mt-32 mb-24 relative">
+        <div className="mt-20 mb-24 relative">
           <span className="absolute block bg-yellow-900 rounded-full h-104 w-104 filter blur-3xl transform -translate-y-56 -translate-x-1/3 opacity-30"></span>
           <span className="rounded-full w-40 h-40 filter blur-2xl bg-yellow-400 block absolute -top-12 -left-12 opacity-40"></span>
           <span className="rounded-full w-40 h-40 filter blur-2xl bg-white block absolute -bottom-24 -right-12 opacity-40"></span>
@@ -114,7 +114,7 @@ const IndexPage = () => {
           </a>
         </p>
       </motion.div>
-      <div className="md:mt-hero mt-120 container pointer-events-none">
+      <div className="md:mt-hero mt-hero container pointer-events-none">
         <div className="w-full border-b border-gray-400 border-opacity-30 text-xs pointer-events-auto">
           <p className="px-2 py-1 border border-b-0 border-gray-400 border-opacity-30 inline-block">
             Selected work

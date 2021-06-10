@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
               duration: 1,
               ease: "easeInOut",
             }}
-            className="mt-24"
+            className="mt-12"
           >
             {children}
           </motion.main>

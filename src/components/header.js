@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 import Nav from "./navigation"
 
 const Header = ({ siteTitle }) => (
-  <header className="fixed px-8 py-8 md:px-0 left-1/2 transform -translate-x-1/2 top-0 text-sm flex-none z-10 container">
+  <header className="sticky top-0 left-0 py-8 text-sm flex-none z-10 container">
     <div className="grid grid-cols-3">
       <Link to="/" className="text-yellow-400 justify-self-start">
         <svg
@@ -24,36 +24,37 @@ const Header = ({ siteTitle }) => (
       </Link>
       <Nav />
       <div className="items-center justify-self-end hidden md:flex">
-        <span className="text-yellow-400 inline-block mr-2">
-          <svg
-            width={16}
-            height={17}
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6 12.5V3.833L14 2.5v8.667"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M4 14.5a2 2 0 100-4 2 2 0 000 4zM12 13.167a2 2 0 100-4 2 2 0 000 4z"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
-        Listening to:{" "}
-        <a
-          className="ml-1 text-white hover:text-yellow-400 border-b border-transparent hover:border-yellow-400"
+        <Link
+          to="/playlists"
+          activeClassName="btn__active"
+          className="ml-1 btn items-center justify-self-end hidden md:flex btn"
           href="https://open.spotify.com/playlist/4fThmEeTfs0aUolJs5t3K5?si=ae1aa9483fcb4742"
           target="_blank"
-          rel="nofollow noreferrer"
+          rel=" nofollow noreferrer"
         >
-          April Playlist &rarr;
-        </a>
+          <span className="text-yellow-400 inline-block mr-2">
+            <svg
+              width={16}
+              height={17}
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 12.5V3.833L14 2.5v8.667"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M4 14.5a2 2 0 100-4 2 2 0 000 4zM12 13.167a2 2 0 100-4 2 2 0 000 4z"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </span>
+          Now Listening ›
+        </Link>
       </div>
     </div>
   </header>

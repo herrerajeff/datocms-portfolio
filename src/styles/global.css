@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Hatton";
+  font-weight: normal;
+  font-style: normal;
+  src: url("/fonts/Hatton-Light.eot");
+  src: url("/fonts/Hatton-Light.woff") format("woff");
+  src: url("/fonts/Hatton-Light.woff2") format("woff2");
+}
+
+/* Custom Components Here */
+@layer base {
+  html,
+  body,
+  #___gatsby,
+  #gatsby-focus-wrapper {
+    @apply h-full;
+  }
+  h1 {
+    @apply text-5xl font-serif text-white leading-tight;
+  }
+  h2 {
+    @apply text-3xl text-white font-bold leading-tight;
+  }
+  body {
+    @apply text-gray-400 bg-background antialiased;
+  }
+  body p a {
+    @apply text-white border-b border-transparent hover:border-yellow-400 transition-all duration-200 hover:text-yellow-400;
+  }
+  .btn {
+    @apply border border-white border-opacity-30 rounded-full px-4 py-2 text-sm text-white hover:border-opacity-100 hover:border-yellow-400 hover:text-yellow-400 transition duration-200 bg-background bg-opacity-50 backdrop-filter backdrop-blur;
+  }
+  .btn__body {
+    @apply rounded-full px-4 py-2 text-sm text-white transition duration-200 bg-white bg-opacity-10 hover:bg-opacity-20 backdrop-filter backdrop-blur;
+  }
+  .btn__sub {
+    @apply border border-white border-opacity-50 rounded-full px-4 py-2 text-sm text-white hover:border-opacity-100 hover:border-yellow-400 hover:text-yellow-400 transition duration-200 bg-white bg-opacity-20 backdrop-filter backdrop-blur;
+  }
+  .btn__active {
+    @apply border rounded-full px-4 py-2 text-sm border-opacity-100 border-yellow-400 text-yellow-400 bg-yellow-900 bg-opacity-30 transition duration-200 backdrop-filter backdrop-blur;
+  }
+  .container-thin {
+    @apply max-w-screen-md mx-auto;
+  }
+}

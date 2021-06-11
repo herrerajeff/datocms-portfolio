@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       margin: {
-        hero: "70vh",
+        hero: "75vh",
         120: "40rem",
       },
       spacing: {
@@ -31,6 +31,9 @@ module.exports = {
       },
       animation: {
         float: "float 8s ease-in-out infinite",
+      },
+      inset: {
+        hero: "18vh",
       },
     },
     colors: {

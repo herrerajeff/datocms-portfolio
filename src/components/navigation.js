@@ -10,12 +10,13 @@ const Nav = () => {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.07,
+        staggerChildren: 0.05,
+        duration: 0.1,
       },
     },
   }
   const subItem = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0 },
   }
   return (

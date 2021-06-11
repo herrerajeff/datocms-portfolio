@@ -9,11 +9,10 @@ module.exports = {
           "variants",
           "responsive",
           "screen",
-          "layer",
         ],
       },
     ],
     "declaration-block-trailing-semicolon": null,
     "no-descending-specificity": null,
   },
-};
+}

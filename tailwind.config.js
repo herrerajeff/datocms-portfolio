@@ -5,6 +5,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      screens: {
+        "3xl": "1824",
+      },
       margin: {
         hero: "75vh",
         120: "40rem",
@@ -33,7 +36,8 @@ module.exports = {
         float: "float 8s ease-in-out infinite",
       },
       inset: {
-        hero: "18vh",
+        hero: "12vh",
+        "hero-xl": "19vh",
       },
     },
     colors: {

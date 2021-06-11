@@ -14,7 +14,7 @@ const About = () => (
       transition={{
         duration: 1.5,
       }}
-      className="fixed w-full md:w-104 inset-0 md:inset-y-0 bg-gradient-to-b from-black to-yellow-400 -z-10 2xl:left-1/4"
+      className="fixed w-full md:w-104 inset-0 md:inset-y-0 bg-gradient-to-b from-black to-yellow-400 -z-10 3xl:left-1/4"
     >
       <img
         className="absolute bottom-0 filter grayscale mix-blend-multiply opacity-75"
@@ -23,7 +23,7 @@ const About = () => (
       />
     </motion.div>
     <Seo title="About" />
-    <div className="container-thin 2xl:mt-40">
+    <div className="container-thin mt-12 3xl:mt-40">
       <h1 className="text-6xl font-serif text-white leading-tight">
         Anything that can be changed, can be designed.
       </h1>

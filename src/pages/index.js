@@ -27,10 +27,10 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Designer" />
       <motion.div
-        className="fixed inset-0 top-hero 3xl:top-hero-xl flex flex-col items-center origin-bottom"
+        className="fixed inset-0 top-hero flex flex-col items-center origin-bottom"
         style={{ opacity, filter }}
       >
-        <div className="mt-20 mb-24 relative">
+        <div className="mt-10 mb-24 relative">
           <span className="absolute block bg-yellow-900 rounded-full h-104 w-104 filter blur-3xl transform -translate-y-56 -translate-x-1/3 opacity-30"></span>
           <span className="rounded-full w-40 h-40 filter blur-2xl bg-yellow-400 block absolute -top-12 -left-12 opacity-40"></span>
           <span className="rounded-full w-40 h-40 filter blur-2xl bg-white block absolute -bottom-24 -right-12 opacity-40"></span>
@@ -80,18 +80,20 @@ const IndexPage = () => {
             </defs>
           </svg>
         </div>
-        <h1 className="text-3xl md:text-5xl lg:text-7xl font-serif text-white text-center leading-9 md:leading-12 lg:leading-14 z-">
+        <h1 className="text-3xl md:text-5xl xl:text-7xl font-serif text-white text-center leading-9 md:leading-12 xl:leading-14">
           I’m Jeff—a designer from <br />
           New York City enhancing physical <br />
           &amp; digital brand experiences.
         </h1>
-        <p className="mt-6 text-sm md:text-base flex">
-          Currently Senior Designer &amp; Competitive Cold Brew Drinker at @
+        <p className="mt-8 text-lg text-center max-w-sm md:max-w-2xl block leading-tight">
+          {" "}
+          Currently Senior Designer &amp; <br className="md:hidden" />{" "}
+          Competitive Cold Brew Drinker at @
           <a
             href="https://www.braze.com"
             target="_blank"
             rel="nofollow noreferrer"
-            className="ml-2 hover:text-yellow-400"
+            className="relative ml-2 hover:text-yellow-400 inline-block top-3"
           >
             <svg
               className="h-7"
@@ -114,7 +116,7 @@ const IndexPage = () => {
           </a>
         </p>
       </motion.div>
-      <div className="md:mt-hero mt-hero container pointer-events-none">
+      <div className="mt-hero container pointer-events-none">
         <div className="w-full border-b border-gray-400 border-opacity-30 text-xs pointer-events-auto">
           <p className="px-2 py-1 border border-b-0 border-gray-400 border-opacity-30 inline-block">
             Selected work

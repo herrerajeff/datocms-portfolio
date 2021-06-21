@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => (
       <Nav />
       <div className="items-center justify-self-end hidden md:flex">
         <Link
-          to="/playlists"
+          to="/"
           activeClassName="btn__active"
           className="ml-1 btn items-center justify-self-end hidden md:flex btn"
           href="https://open.spotify.com/playlist/4fThmEeTfs0aUolJs5t3K5?si=ae1aa9483fcb4742"

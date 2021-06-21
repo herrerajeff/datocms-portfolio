@@ -6,7 +6,13 @@ import { motion } from "framer-motion"
 const Nav = () => {
   const [navOpen, setNavOpen] = useState(false)
   const subMenu = {
-    hidden: { opacity: 0 },
+    hidden: {
+      opacity: 0,
+      transition: {
+        staggerChildren: 0.05,
+        duration: 0.1,
+      },
+    },
     show: {
       opacity: 1,
       transition: {
@@ -32,7 +38,6 @@ const Nav = () => {
       </Link>
       <div className="relative subnav">
         <button
-          navOpen={navOpen}
           onClick={() => setNavOpen(!navOpen)}
           className={navOpen ? "btn__active" : "btn__sub"}
         >
@@ -44,28 +49,29 @@ const Nav = () => {
         {navOpen ? (
           <motion.div
             variants={subMenu}
-            className="absolute top-full mt-3 flex flex-col space-y-3"
+            className="absolute top-full right-0 md:left-0 mt-3 grid grid-rows-4 gap-3"
             initial="hidden"
             animate="show"
             exit={{ opacity: 0 }}
             transition={{
-              duration: 1,
+              duration: 0.5,
               ease: "easeInOut",
             }}
           >
             <motion.a
               variants={subItem}
               href="https://www.twitter.com/isthatjeff"
-              className="btn__sub flex items-center"
+              className="btn__sub flex-none flex items-center"
               target="_blank"
               rel="noopener nofollower noreferrer"
               transition={{
                 ease: "easeOut",
+                duration: 0.3,
               }}
               onClick={() => setNavOpen(!navOpen)}
             >
               <svg
-                className="w-4 h-4 mr-2"
+                className="w-4 h-4 mr-2 block"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +86,7 @@ const Nav = () => {
             <motion.a
               variants={subItem}
               href="https://www.instagram.com/_isthatjeff"
-              className="btn__sub flex items-center"
+              className="btn__sub flex-none w-auto flex items-center"
               target="_blank"
               rel="noopener nofollower noreferrer"
               transition={{
@@ -89,7 +95,7 @@ const Nav = () => {
               onClick={() => setNavOpen(!navOpen)}
             >
               <svg
-                className="w-4 h-4 mr-2"
+                className="w-4 h-4 mr-2 block"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +110,7 @@ const Nav = () => {
             <motion.a
               variants={subItem}
               href="https://www.linkedin.com/in/jeffrey-herrera"
-              className="btn__sub flex items-center"
+              className="btn__sub flex-none flex items-center"
               target="_blank"
               rel="noopener nofollower noreferrer"
               transition={{
@@ -113,7 +119,7 @@ const Nav = () => {
               onClick={() => setNavOpen(!navOpen)}
             >
               <svg
-                className="w-4 h-4 mr-2"
+                className="w-4 h-4 mr-2 block"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +134,7 @@ const Nav = () => {
             <motion.a
               variants={subItem}
               href="mailto:herrera.jeffrey@gmail.com"
-              className="btn__sub flex items-center"
+              className="btn__sub flex-none flex items-center"
               target="_blank"
               rel="noopener nofollower noreferrer"
               transition={{
@@ -137,7 +143,7 @@ const Nav = () => {
               onClick={() => setNavOpen(!navOpen)}
             >
               <svg
-                className="w-4 h-4 mr-2"
+                className="w-4 h-4 mr-2 block"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

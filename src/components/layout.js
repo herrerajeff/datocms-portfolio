@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
 
   return (
     <AnimatePresence>
-      <div className="px-8 flex flex-col min-h-full items-stretch">
+      <div className="px-8 flex flex-col w-full min-h-full items-stretch">
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <div className="flex-grow flex-shrink-0 relative">
           <motion.main

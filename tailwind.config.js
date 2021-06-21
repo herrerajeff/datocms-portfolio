@@ -5,11 +5,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      screens: {
-        "3xl": "1824",
-      },
+      // screens: {
+      //   "2xl": "1550",
+      // },
       margin: {
-        hero: "75vh",
+        "3/4": "75%",
+        hero: "70vh",
         120: "40rem",
       },
       spacing: {
@@ -36,8 +37,7 @@ module.exports = {
         float: "float 8s ease-in-out infinite",
       },
       inset: {
-        hero: "12vh",
-        "hero-xl": "19vh",
+        hero: "18%",
       },
     },
     colors: {

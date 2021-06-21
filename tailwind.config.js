@@ -1,13 +1,16 @@
 const colors = require("tailwindcss/colors")
 
 module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  mode: "jit",
+  purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      // screens: {
-      //   "2xl": "1550",
-      // },
+      colors: {
+        yellow: {
+          active: "#381506",
+        },
+      },
       margin: {
         "3/4": "75%",
         hero: "70vh",
@@ -15,7 +18,7 @@ module.exports = {
       },
       spacing: {
         104: "32rem",
-        112: "48rem",
+        112: "40rem",
       },
       zIndex: {
         "-10": "-10",
@@ -54,6 +57,14 @@ module.exports = {
     fontFamily: {
       serif: [
         "Hatton",
+        "Georgia",
+        "Cambria",
+        '"Times New Roman"',
+        "Times",
+        "serif",
+      ],
+      sans: [
+        "Inter",
         "Georgia",
         "Cambria",
         '"Times New Roman"',

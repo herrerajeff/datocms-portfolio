@@ -26,7 +26,7 @@ const Nav = () => {
     show: { opacity: 1, y: 0 },
   }
   return (
-    <nav className="space-x-2 flex md:justify-self-center col-span-2 md:col-span-1 mix-blend-exclusion">
+    <nav className="space-x-3 flex md:justify-self-center col-span-2 md:col-span-1 mix-blend-exclusion">
       <Link className="btn" activeClassName="btn__active" to="/">
         Work
       </Link>
@@ -39,7 +39,11 @@ const Nav = () => {
       <div className="relative subnav">
         <button
           onClick={() => setNavOpen(!navOpen)}
-          className={navOpen ? "btn__active" : "btn__sub"}
+          className={
+            navOpen
+              ? "btn__active active:outline-none outline-none focus:outline-none"
+              : "btn__sub"
+          }
         >
           Say&nbsp;Hi&nbsp;
           <span role="img" aria-label="waving hand">

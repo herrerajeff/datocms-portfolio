@@ -1,3 +1,5 @@
+const linkResolver = require("./src/utils/link_resolver")
+
 module.exports = {
   siteMetadata: {
     title: `Jeffrey Herrera`,
@@ -19,18 +21,26 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Jeffrey Herrera`,
+        short_name: `JH`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#F59E0B`,
+        theme_color: `#F59E0B`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    {
+      resolve: "gatsby-source-prismic",
+      options: {
+        repositoryName: "jh21",
+        linkResolver: () => linkResolver,
+        schemas: {
+          about: require("./custom_types/about.json"),
+        },
+      },
+    }, // To learn more, visit: https://gatsby.dev/offline // this (optional) plugin enables Progressive Web App + Offline functionality
     `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
   ],

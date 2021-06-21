@@ -28,13 +28,13 @@ const Footer = () => {
           </span>{" "}
           on it
         </button>
-        <p className="text-xs mt-4 text-gray-600">
+        <p className="text-xs mt-4 text-gray-500">
           ©{new Date().getFullYear()} Jeffrey Herrera{" "}
         </p>
       </motion.div>
       {SocialOpen ? (
         <motion.div
-          className="fixed inset-0 bg-black bg-opacity-90 flex flex-col justify-center items-center"
+          className="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-lg flex flex-col justify-center items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -44,7 +44,7 @@ const Footer = () => {
           }}
         >
           <motion.div
-            className="flex flex-col justify-center space-y-8 z-20 -mt-48"
+            className="flex flex-col justify-center space-y-8 z-20 -mt-64"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
@@ -58,10 +58,10 @@ const Footer = () => {
               href="http://www.twitter.com/isthatjeff"
               target="_blank"
               rel="nofollower noreferrer noopener"
-              className="text-6xl font-serif text-white hover:text-yellow-400 transition duration-300 group relative"
+              className="text-6xl font-serif text-white hover:text-yellow-400 focus:text-yellow-400 transition duration-300 group relative no-outline-important"
             >
               Twitter
-              <span className="absolute ml-4 text-yellow-400 opacity-0 group-hover:opacity-100 transform -translate-x-12 group-hover:translate-x-0 transition duration-300">
+              <span className="absolute ml-4 text-yellow-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 -translate-x-12 group-hover:translate-x-0 group-focus:translate-x-0 transition duration-300">
                 →
               </span>
             </a>
@@ -69,10 +69,10 @@ const Footer = () => {
               href="http://www.instagram.com/_isthatjeff"
               target="_blank"
               rel="nofollower noreferrer noopener"
-              className="text-6xl font-serif text-white hover:text-yellow-400 transition duration-300 group relative"
+              className="text-6xl font-serif text-white hover:text-yellow-400 focus:text-yellow-400 transition duration-300 group relative no-outline-important"
             >
               Instagram
-              <span className="absolute ml-4 text-yellow-400 opacity-0 group-hover:opacity-100 transform -translate-x-12 group-hover:translate-x-0 transition duration-300">
+              <span className="absolute ml-4 text-yellow-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 -translate-x-12 group-hover:translate-x-0 group-focus:translate-x-0 transition duration-300">
                 →
               </span>
             </a>
@@ -80,10 +80,10 @@ const Footer = () => {
               href="http://www.linkedin.com/in/jeffrey-herrera"
               target="_blank"
               rel="nofollower noreferrer noopener"
-              className="text-6xl font-serif text-white hover:text-yellow-400 transition duration-300 group relative"
+              className="text-6xl font-serif text-white hover:text-yellow-400 focus:text-yellow-400 transition duration-300 group relative no-outline-important"
             >
               LinkedIn
-              <span className="absolute ml-4 text-yellow-400 opacity-0 group-hover:opacity-100 transform -translate-x-12 group-hover:translate-x-0 transition duration-300">
+              <span className="absolute ml-4 text-yellow-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 -translate-x-12 group-hover:translate-x-0 group-focus:translate-x-0 transition duration-300">
                 →
               </span>
             </a>
@@ -91,10 +91,10 @@ const Footer = () => {
               href="@mailto:herrera.jeffrey@gmail.com"
               target="_blank"
               rel="nofollower noreferrer noopener"
-              className="text-6xl font-serif text-white hover:text-yellow-400 transition duration-300 group relative"
+              className="text-6xl font-serif text-white hover:text-yellow-400 focus:text-yellow-400 transition duration-300 group relative no-outline-important"
             >
               Email
-              <span className="absolute ml-4 text-yellow-400 opacity-0 group-hover:opacity-100 transform -translate-x-12 group-hover:translate-x-0 transition duration-300">
+              <span className="absolute ml-4 text-yellow-400 opacity-0 group-hover:opacity-100 group-focus:opacity-100 -translate-x-12 group-hover:translate-x-0 group-focus:translate-x-0 transition duration-300">
                 →
               </span>
             </a>
@@ -107,7 +107,7 @@ const Footer = () => {
               delay: 0.5,
             }}
             onClick={() => setSocialOpen(false)}
-            className="mt-16 rounded-full bg-white hover:bg-yellow-400 w-14 h-14 text-black backdrop-filter backdrop-blur-md grid place-items-center transform rotate-0 hover:rotate-90 transition duration-300"
+            className="mt-16 rounded-full bg-white hover:bg-yellow-400 focus:bg-yellow-400 w-14 h-14 text-black grid place-items-center rotate-0 hover:rotate-90 focus:rotate-90 transition duration-300 no-outline-important"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

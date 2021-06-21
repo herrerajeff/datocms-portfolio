@@ -5,8 +5,8 @@ import { Link } from "gatsby"
 import Nav from "./navigation"
 
 const Header = ({ siteTitle }) => (
-  <header className="sticky top-0 left-0 py-8 text-sm flex-none z-10 container">
-    <div className="grid grid-cols-3">
+  <header className="sticky inset-0 py-8 w-full text-sm flex-none z-10 container">
+    <div className="flex justify-between md:grid grid-cols-3">
       <Link to="/" className="text-yellow-400 justify-self-start">
         <svg
           width={32}
@@ -25,7 +25,7 @@ const Header = ({ siteTitle }) => (
       <Nav />
       <div className="items-center justify-self-end hidden md:flex">
         <Link
-          to="/"
+          to="/playlists"
           activeClassName="btn__active"
           className="ml-1 btn items-center justify-self-end hidden md:flex btn"
           href="https://open.spotify.com/playlist/4fThmEeTfs0aUolJs5t3K5?si=ae1aa9483fcb4742"

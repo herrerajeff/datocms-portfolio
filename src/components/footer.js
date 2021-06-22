@@ -44,7 +44,7 @@ const Footer = () => {
           }}
         >
           <motion.div
-            className="flex flex-col justify-center space-y-8 z-20 -mt-64"
+            className="flex flex-col justify-center space-y-8 z-20"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}

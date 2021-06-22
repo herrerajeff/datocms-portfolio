@@ -27,16 +27,16 @@ const About = ({ data }) => {
         transition={{
           duration: 1.5,
         }}
-        className="fixed md:w-104 inset-0 md:inset-y-0 bg-gradient-to-b from-black to-yellow-400 -z-10 2xl:left-1/4"
+        className="fixed md:w-104 inset-0 md:inset-y-0 bg-gradient-to-b from-black to-yellow-400/70 md:to-yellow-400 -z-10"
       >
         <img
-          className="absolute bottom-0 filter grayscale mix-blend-multiply opacity-75"
+          className="absolute bottom-0 filter grayscale mix-blend-multiply opacity-40 md:opacity-75"
           src={aboutContent.portrait.url}
           alt="Jeff Herrera Portrait"
         />
       </motion.div>
       <Seo title="About" />
-      <div className="container-thin mt-12 2xl:mt-40">
+      <div className="container-thin mt-24">
         <h1 className="text-6xl font-serif text-white leading-tight">
           {RichText.asText(aboutContent.quote.raw)}
         </h1>

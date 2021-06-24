@@ -38,6 +38,8 @@ module.exports = {
         linkResolver: () => linkResolver,
         schemas: {
           about: require("./custom_types/about.json"),
+          casa: require("./custom_types/casa.json"),
+          playlists: require("./custom_types/playlists.json"),
         },
       },
     }, // To learn more, visit: https://gatsby.dev/offline // this (optional) plugin enables Progressive Web App + Offline functionality

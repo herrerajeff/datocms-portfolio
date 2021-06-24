@@ -23,7 +23,7 @@ const Writing = () => (
     <Seo title="Writing" />
     <div className="container mt-12 2xl:mt-20">
       <h1 className="text-3xl text-yellow-400 mb-6">2020</h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-6">
         <div className="rounded-xl bg-white/10 p-6 flex-col justify-between items-between col-span-2 transition duration-300">
           <Link
             to="/playlists"

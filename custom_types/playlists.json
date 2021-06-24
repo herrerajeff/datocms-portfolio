@@ -1,0 +1,43 @@
+{
+  "Main": {
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title"
+      }
+    },
+    "cover": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Cover"
+      }
+    },
+    "url": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Url",
+        "select": null
+      }
+    },
+    "featured": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "allowTargetBlank": true,
+        "label": "Featured"
+      }
+    },
+    "year": {
+      "type": "Select",
+      "config": {
+        "options": ["2021", "2020", "2019", "2018"],
+        "default_value": "2021",
+        "label": "Year"
+      }
+    }
+  }
+}

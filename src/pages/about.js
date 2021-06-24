@@ -54,7 +54,7 @@ const About = ({ data }) => {
   )
 }
 
-export const query = graphql`
+export const aboutquery = graphql`
   query AboutPage {
     allPrismicAbout {
       edges {

@@ -43,7 +43,7 @@ const Playlists = ({ data }) => {
             Links are Spotify only.
           </div>
         </div>
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {document.map(playlist => {
             return (
               <div>
@@ -64,7 +64,7 @@ const Playlists = ({ data }) => {
 
 export const playlistquery = graphql`
   query playlists {
-    allPrismicPlaylists {
+    allPrismicPlaylists(sort: { fields: data___date, order: DESC }) {
       edges {
         node {
           data {

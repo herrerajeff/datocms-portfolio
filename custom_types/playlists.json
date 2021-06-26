@@ -20,7 +20,7 @@
       "config": {
         "allowTargetBlank": true,
         "label": "Url",
-        "select": null
+        "select": "web"
       }
     },
     "featured": {
@@ -31,12 +31,10 @@
         "label": "Featured"
       }
     },
-    "year": {
-      "type": "Select",
+    "date": {
+      "type": "Date",
       "config": {
-        "options": ["2021", "2020", "2019", "2018"],
-        "default_value": "2021",
-        "label": "Year"
+        "label": "Date"
       }
     }
   }

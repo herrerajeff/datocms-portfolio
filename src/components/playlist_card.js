@@ -9,7 +9,7 @@ const PlaylistCard = ({ url, title, featured, cover }) => {
       target="_blank"
       rel="noreferrer nofollower"
       to="/"
-      className="block p-4 bg-gray-900/30 hover:bg-gray-800 hover:text-yellow-400 transition duration-300 rounded-xl border border-white/10"
+      className="block p-4 bg-gray-900/30 hover:bg-yellow-400/20 hover:text-yellow-400 transition duration-300 rounded-xl border border-white/10"
     >
       <Img />
       <img src={cover} alt="Playlist Cover" className="w-full mb-8" />

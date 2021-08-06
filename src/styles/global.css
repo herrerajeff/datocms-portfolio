@@ -38,10 +38,10 @@ html {
     font-variant-ligatures: common-ligatures;
   }
   body p a {
-    @apply text-white border-b border-transparent hover:border-yellow-400 focus:border-yellow-400 transition-all duration-200 hover:text-yellow-400 focus:text-yellow-400;
+    @apply text-white border-b border-white/30 hover:border-yellow-400 focus:border-yellow-400 transition-all duration-200 hover:text-yellow-400 focus:text-yellow-400;
   }
   .btn {
-    @apply border border-white/30 rounded-full px-4 py-2 text-sm text-white hover:border-opacity-100 hover:border-yellow-400 hover:text-yellow-400 focus:border-opacity-100 focus:border-yellow-400 focus:text-yellow-400 transition duration-200 bg-background/70 backdrop-blur;
+    @apply border border-white/40 rounded-full px-4 py-2 text-sm text-white hover:border-opacity-100 hover:border-yellow-400 hover:text-yellow-400 focus:border-opacity-100 focus:border-yellow-400 focus:text-yellow-400 transition duration-200 bg-background/70 backdrop-blur;
   }
   .btn__body {
     @apply rounded-full px-4 py-2 text-sm text-white transition duration-200 bg-white/10 hover:bg-opacity-20 focus:bg-opacity-20 backdrop-filter backdrop-blur;

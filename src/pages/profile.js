@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 const Profile = () => (
   <Layout>
     <Seo title="Profile" />
-    <div className="container-thin mt-40">
+    <div className="container-thin">
       {/* <h1>Profile</h1> */}
       <h2 className="mt-8 border-b border-gray-400 border-opacity-30">
         My Music
@@ -88,7 +88,7 @@ const Profile = () => (
         title="Latest Playlist"
       ></iframe>
       <Link to="/" className="btn__body inline-block mt-12">
-        ← Go back to the homepage
+        ← Back to full site
       </Link>
     </div>
   </Layout>

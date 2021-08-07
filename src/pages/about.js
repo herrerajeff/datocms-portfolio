@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import htmlSerializer from "../utils/html_serializer"
+import CustomLink from "../utils/custom_link"
 import { RichText } from "prismic-reactjs"
 
 const About = ({ data }) => {
@@ -47,6 +48,7 @@ const About = ({ data }) => {
           <RichText
             render={aboutContent.about_me.raw}
             htmlSerializer={htmlSerializer}
+            serializeHyperlink={CustomLink}
           />
         </div>
       </div>

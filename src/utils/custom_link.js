@@ -1,23 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Link as PrismicLink } from "prismic-reactjs"
-import linkResolver from "./link_resolver"
+import { linkResolver } from "./link_resolver"
 
-const CustomLink = (type, element, content, children, index) => {
+export const CustomLink = (type, element, content, children, index) => {
   if (element.data.link_type === "Document") {
-    return (
-      <Link to={linkResolver(element.data)} key={element.data.id}>
-        {content}
-      </Link>
-    )
+    ;<Link to={linkResolver(element.data)} key={element.data.id}>
+      {content}
+    </Link>
   }
 
   if (element.data.link_type === "Web") {
-    ;<PrismicLink key={element.data.id} to={linkResolver(element.data)}>
-      <a target="_blank" rel="noopener noreferrer nofollower">
-        {content}
-      </a>
-    </PrismicLink>
+    ;<a id={element.data.id} href={element.data.url}>
+      {content}
+    </a>
   }
   return null
 }

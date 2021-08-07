@@ -1,5 +1,3 @@
-const linkResolver = require("./src/utils/link_resolver")
-
 module.exports = {
   siteMetadata: {
     title: `Jeffrey Herrera`,
@@ -35,7 +33,7 @@ module.exports = {
       resolve: "gatsby-source-prismic",
       options: {
         repositoryName: "jh21",
-        linkResolver: () => linkResolver,
+        linkResolver: require("./src/utils/link_resolver").linkResolver,
         schemas: {
           about: require("./custom_types/about.json"),
           casa: require("./custom_types/casa.json"),

@@ -12,7 +12,7 @@ const Taco = ({ data }) => {
   const document = data.allPrismicTaco.edges[0].node.data
 
   const tacoContent = {
-    title: document.title,
+    title: document.title.text,
     featured: document.featured,
     background: document.background,
   }
@@ -25,7 +25,7 @@ const Taco = ({ data }) => {
           className="text-6xl font-serif text-white leading-tight w-full"
           style={{ fontFamily: "Comic Sans" }}
         >
-          {RichText.asText(tacoContent.title.text)}
+          {RichText.asText(tacoContent.title)}
         </div>
       </div>
     </Layout>

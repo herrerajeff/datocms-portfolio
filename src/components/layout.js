@@ -13,7 +13,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, background }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,7 +26,10 @@ const Layout = ({ children }) => {
 
   return (
     <AnimatePresence>
-      <div className="px-8 flex flex-col w-full min-h-full items-stretch">
+      <div
+        className="px-8 flex flex-col w-full min-h-full items-stretch"
+        style={{ backgroundImage: `url(${background})` }}
+      >
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
         <div className="flex-grow flex-shrink-0 relative">
           <motion.main

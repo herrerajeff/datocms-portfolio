@@ -67,4 +67,31 @@ html {
   .container-thin {
     @apply max-w-screen-md mx-auto;
   }
+  .taco-marquee {
+    animation: marquee 20s linear forwards infinite;
+  }
+  .taco-spin {
+    animation: spin 5s linear forwards infinite;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(300%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  75% {
+    transform: rotate(8deg);
+  }
 }

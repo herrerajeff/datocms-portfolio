@@ -1,6 +1,4 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
+require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
@@ -32,13 +30,16 @@ module.exports = {
         icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-gatsby-cloud`,
     {
-      resolve: "gatsby-source-sanity",
+      resolve: "gatsby-source-datocms",
       options: {
-        projectId: `${process.env.SANITY_PROJECT_ID}`,
-        dataset: `${process.env.SANITY_DATASET}`,
-        token: process.env.SANITY_TOKEN,
+        apiToken: process.env.DATO_API_TOKEN,
+        environment: `main`,
+        previewMode: false,
+        disableLiveReload: false,
+        apiUrl: "https://site-api.datocms.com",
       },
     },
     `gatsby-plugin-offline`,

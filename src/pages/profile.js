@@ -8,7 +8,6 @@ const Profile = () => (
   <Layout>
     <Seo title="Profile" />
     <div className="container-thin">
-      {/* <h1>Profile</h1> */}
       <h2 className="mt-8 border-b border-gray-400 border-opacity-30">
         My Music
       </h2>

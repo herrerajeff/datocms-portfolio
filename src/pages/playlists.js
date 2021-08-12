@@ -1,9 +1,9 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import PlaylistCard from "../components/playlist_card"
+// import PlaylistCard from "../components/playlist_card"
 
 const Playlists = ({ data }) => {
   // const document = data.allPrismicPlaylists.edges

@@ -6,7 +6,9 @@ import Seo from "../components/seo"
 import CasaCard from "../components/casa_card"
 
 const Home = ({ data }) => {
-  // const document = data.allPrismicCasa.edges[0].node.data.link
+  const design = data.design.nodes
+  const misc = data.misc.nodes
+  const dev = data.dev.nodes
 
   return (
     <Layout>
@@ -19,11 +21,9 @@ const Home = ({ data }) => {
               Design
             </h2>
             <div className="grid grid-cols-2 grid-rows-auto gap-4 p-4">
-              {/* {document
-                .filter(link => link.category === "Design")
-                .map(link => {
-                  return <CasaCard url={link.link1.url} name={link.name.text} />
-                })} */}
+              {design.map(link => {
+                return <CasaCard url={link.url} name={link.title} />
+              })}
             </div>
           </div>
           <div className="grid grid-rows-auto bg-gray-900/30 hover:bg-yellow-400/10 transition duration-300 rounded-xl py-4 border border-white/10 group">
@@ -31,11 +31,9 @@ const Home = ({ data }) => {
               Misc
             </h2>
             <div className="grid grid-cols-2 grid-rows-auto gap-4 p-4">
-              {/* {document
-                .filter(link => link.category === "Misc")
-                .map(link => {
-                  return <CasaCard url={link.link1.url} name={link.name.text} />
-                })} */}
+              {misc.map(link => {
+                return <CasaCard url={link.url} name={link.title} />
+              })}
             </div>
           </div>
           <div className="grid grid-rows-auto bg-gray-900/30 hover:bg-yellow-400/10 transition duration-300 rounded-xl py-4 border border-white/10 group">
@@ -43,11 +41,9 @@ const Home = ({ data }) => {
               Dev
             </h2>
             <div className="grid grid-cols-2 grid-rows-auto gap-4 p-4">
-              {/* {document
-                .filter(link => link.category === "Dev")
-                .map(link => {
-                  return <CasaCard url={link.link1.url} name={link.name.text} />
-                })} */}
+              {dev.map(link => {
+                return <CasaCard url={link.url} name={link.title} />
+              })}
             </div>
           </div>
         </div>
@@ -56,26 +52,45 @@ const Home = ({ data }) => {
   )
 }
 
-// export const casaquery = graphql`
-//   query Casa {
-//     allPrismicCasa {
-//       edges {
-//         node {
-//           data {
-//             link {
-//               category
-//               name {
-//                 text
-//               }
-//               link1 {
-//                 url
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const casaquery = graphql`
+  query Casa {
+    design: allDatoCmsCasa(
+      filter: { category: { elemMatch: { category: { eq: "Design" } } } }
+    ) {
+      nodes {
+        url
+        title
+        category {
+          originalId
+          category
+        }
+      }
+    }
+    misc: allDatoCmsCasa(
+      filter: { category: { elemMatch: { category: { eq: "Misc" } } } }
+    ) {
+      nodes {
+        url
+        title
+        category {
+          originalId
+          category
+        }
+      }
+    }
+    dev: allDatoCmsCasa(
+      filter: { category: { elemMatch: { category: { eq: "Dev" } } } }
+    ) {
+      nodes {
+        url
+        title
+        category {
+          originalId
+          category
+        }
+      }
+    }
+  }
+`
 
 export default Home

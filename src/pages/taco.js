@@ -1,12 +1,10 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 // import { Link } from "gatsby"
 // import { motion } from "framer-motion"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-// import htmlSerializer from "../utils/html_serializer"
-import { RichText } from "prismic-reactjs"
 
 const Taco = ({ data }) => {
   // const document = data.prismicTaco

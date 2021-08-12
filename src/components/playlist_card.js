@@ -1,5 +1,4 @@
 import * as React from "react"
-import { RichText } from "prismic-reactjs"
 import Img from "gatsby-image"
 
 const PlaylistCard = ({ url, title, featured, cover }) => {
@@ -15,7 +14,7 @@ const PlaylistCard = ({ url, title, featured, cover }) => {
       <img src={cover} alt="Playlist Cover" className="w-full mb-8" />
       <h2>{title}</h2>
       <p className="text-xs mt-4">Featured:</p>
-      {RichText.asText(featured)}
+      {/* {RichText.asText(featured)} */}
     </a>
   )
 }

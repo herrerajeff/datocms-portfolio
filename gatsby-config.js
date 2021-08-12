@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Jeffrey Herrera`,
@@ -30,18 +34,13 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     {
-      resolve: "gatsby-source-prismic",
+      resolve: "gatsby-source-sanity",
       options: {
-        repositoryName: "jh21",
-        linkResolver: require("./src/utils/link_resolver").linkResolver,
-        schemas: {
-          about: require("./custom_types/about.json"),
-          casa: require("./custom_types/casa.json"),
-          playlists: require("./custom_types/playlists.json"),
-          taco: require("./custom_types/taco.json"),
-        },
+        projectId: `${process.env.SANITY_PROJECT_ID}`,
+        dataset: `${process.env.SANITY_DATASET}`,
+        token: process.env.SANITY_TOKEN,
       },
-    }, // To learn more, visit: https://gatsby.dev/offline // this (optional) plugin enables Progressive Web App + Offline functionality
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
   ],

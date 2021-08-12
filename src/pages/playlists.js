@@ -6,7 +6,7 @@ import Seo from "../components/seo"
 import PlaylistCard from "../components/playlist_card"
 
 const Playlists = ({ data }) => {
-  const document = data.allPrismicPlaylists.edges
+  // const document = data.allPrismicPlaylists.edges
   // const playlistContent = {
   //   url: document.node.data.url.url,
   //   title: document.node.data.title.url.text,
@@ -44,7 +44,7 @@ const Playlists = ({ data }) => {
           </div>
         </div>
         <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {document.map(playlist => {
+          {/* {document.map(playlist => {
             return (
               <div>
                 <PlaylistCard
@@ -55,36 +55,36 @@ const Playlists = ({ data }) => {
                 />
               </div>
             )
-          })}
+          })} */}
         </div>
       </div>
     </Layout>
   )
 }
 
-export const playlistquery = graphql`
-  query playlists {
-    allPrismicPlaylists(sort: { fields: data___date, order: DESC }) {
-      edges {
-        node {
-          data {
-            title {
-              text
-            }
-            featured {
-              raw
-            }
-            url {
-              url
-            }
-            cover {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const playlistquery = graphql`
+//   query playlists {
+//     allPrismicPlaylists(sort: { fields: data___date, order: DESC }) {
+//       edges {
+//         node {
+//           data {
+//             title {
+//               text
+//             }
+//             featured {
+//               raw
+//             }
+//             url {
+//               url
+//             }
+//             cover {
+//               url
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default Playlists

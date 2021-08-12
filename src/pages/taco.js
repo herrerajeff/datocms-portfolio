@@ -9,13 +9,13 @@ import Seo from "../components/seo"
 import { RichText } from "prismic-reactjs"
 
 const Taco = ({ data }) => {
-  const document = data.allPrismicTaco.edges[0].node.data
+  // const document = data.prismicTaco
 
-  const tacoContent = {
-    title: document.title.text,
-    featured: document.featured,
-    background: document.background,
-  }
+  // const tacoContent = {
+  //   title: document.data.title.text,
+  //   featured: document.data.featured,
+  //   background: document.data.background,
+  // }
 
   return (
     <Layout>
@@ -25,33 +25,29 @@ const Taco = ({ data }) => {
           className="text-6xl font-serif text-white leading-tight w-full"
           style={{ fontFamily: "Comic Sans" }}
         >
-          {RichText.asText(tacoContent.title)}
+          {/* {RichText.asText(tacoContent.title)} */}
         </div>
       </div>
     </Layout>
   )
 }
 
-export const tacoquery = graphql`
-  query TacoPage {
-    allPrismicTaco {
-      edges {
-        node {
-          data {
-            background {
-              url
-            }
-            featured {
-              url
-            }
-            title {
-              text
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// export const tacoquery = graphql`
+//   query TacoPage {
+//     prismicTaco {
+//       data {
+//         background {
+//           url
+//         }
+//         featured {
+//           url
+//         }
+//         title {
+//           text
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default Taco

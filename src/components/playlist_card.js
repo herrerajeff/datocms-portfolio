@@ -1,5 +1,5 @@
 import * as React from "react"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const PlaylistCard = ({ url, title, featured, cover }) => {
   return (
@@ -8,13 +8,21 @@ const PlaylistCard = ({ url, title, featured, cover }) => {
       target="_blank"
       rel="noreferrer nofollower"
       to="/"
-      className="block p-4 bg-gray-900/30 hover:bg-yellow-400/20 hover:text-yellow-400 transition duration-300 rounded-xl border border-white/10"
+      className="block p-4 hover:bg-black/50 hover:text-yellow-400 transition duration-300 rounded-xl border border-white/20 hover:border-yellow-400/70 relative overflow-hidden object-cover"
     >
-      <Img />
-      <img src={cover} alt="Playlist Cover" className="w-full mb-8" />
+      <GatsbyImage
+        image={cover}
+        alt="Playlist Cover"
+        className="absolute inset-0 -z-10 blur-xl opacity-40 rotate-180"
+      />
+      <GatsbyImage
+        image={cover}
+        alt="Playlist Cover"
+        className="w-full mb-8 shadow-xl"
+      />
       <h2>{title}</h2>
-      <p className="text-xs mt-4">Featured:</p>
-      {/* {RichText.asText(featured)} */}
+      <p className="text-xs mt-4 text-white/50">Featured:</p>
+      <p className="text-white/70">{featured}</p>
     </a>
   )
 }

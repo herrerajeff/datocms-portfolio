@@ -1,7 +1,29 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const path = require("path")
 
-// You can delete this file if you're not using it
+// Implement the Gatsby API “createPages”. This is called once the
+// data layer is bootstrapped to let plugins create pages from data.
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+  const results = await graphql(`
+    {
+      allDatoCmsProject {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
+    }
+  `)
+
+  results.data.allDatoCmsProject.edges.forEach(edge => {
+    const project = edge.node
+
+    createPage({
+      path: `/${project.slug}/`,
+      component: require.resolve("./src/templates/singleproject.js"),
+      context: {
+        slug: project.slug,
+      },
+    })
+  })
+}

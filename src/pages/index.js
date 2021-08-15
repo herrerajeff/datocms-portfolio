@@ -1,6 +1,6 @@
 import * as React from "react"
-// import { Link } from "gatsby"
-// import { StaticImage } from "gatsby-plugin-image"
+import { graphql } from "gatsby"
+
 import {
   motion,
   useSpring,
@@ -12,7 +12,8 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ProjectCard from "../components/project_card"
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const work = data.allDatoCmsProject.nodes
   const { scrollY } = useViewportScroll()
   const offsetRange = 600
   const yRange = useTransform(scrollY, [offsetRange, 0], [0.6, 1])
@@ -87,17 +88,16 @@ const IndexPage = () => {
             &amp; digital brand experiences.
           </h1>
           <p className="mt-8 text-md md:text-lg text-center max-w-sm md:max-w-2xl mx-auto block leading-[0.5]">
-            {" "}
             Currently Senior Designer &amp; <br className="md:hidden" />{" "}
             Competitive Cold Brew Drinker at @
             <a
               href="https://www.braze.com"
               target="_blank"
               rel="nofollow noreferrer"
-              className="relative ml-2 hover:text-yellow-400 inline-block top-3 border-b-0"
+              className="relative ml-2 hover:text-yellow-400 inline-block top-[0.6rem] border-b-0"
             >
               <svg
-                className="h-7"
+                className="h-[1.7rem]"
                 viewBox="0 0 63 32"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,18 +125,42 @@ const IndexPage = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8 even:mt-4 pointer-events-auto">
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
-          <ProjectCard />
+          {work.map(work => {
+            return (
+              <ProjectCard
+                title={work.title}
+                color={work.color.hex}
+                description={work.description}
+                fluid={work.homeImage.fluid}
+                image={work.homeImage.gatsbyImageData}
+                slug={work.slug}
+              />
+            )
+          })}
         </div>
       </div>
     </Layout>
   )
 }
 export default IndexPage
+
+export const workQuery = graphql`
+  query workPage {
+    allDatoCmsProject {
+      nodes {
+        homeImage {
+          fluid {
+            src
+          }
+          gatsbyImageData
+        }
+        title
+        description
+        color {
+          hex
+        }
+        slug
+      }
+    }
+  }
+`

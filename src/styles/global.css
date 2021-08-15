@@ -73,6 +73,12 @@ html {
   .taco-spin {
     animation: spin 5s linear forwards infinite;
   }
+  .project-headings h3 {
+    @apply text-2xl text-white;
+  }
+  .project-headings h4 {
+    @apply text-2xl;
+  }
 }
 
 @keyframes marquee {

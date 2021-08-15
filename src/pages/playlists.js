@@ -1,18 +1,12 @@
 import * as React from "react"
-// import { graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-// import PlaylistCard from "../components/playlist_card"
+import PlaylistCard from "../components/playlist_card"
 
 const Playlists = ({ data }) => {
-  // const document = data.allPrismicPlaylists.edges
-  // const playlistContent = {
-  //   url: document.node.data.url.url,
-  //   title: document.node.data.title.url.text,
-  //   featured: document.node.data.featured.raw,
-  //   cover: document.node.data.cover.url,
-  // }
+  const playlist = data.allDatoCmsPlaylist.nodes
 
   return (
     <Layout>
@@ -43,48 +37,41 @@ const Playlists = ({ data }) => {
             Links are Spotify only.
           </div>
         </div>
-        <div className="mt-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {/* {document.map(playlist => {
+        <div className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+          {playlist.map(playlist => {
             return (
-              <div>
-                <PlaylistCard
-                  url={playlist.node.data.url.url}
-                  title={playlist.node.data.title.text}
-                  featured={playlist.node.data.featured.raw}
-                  cover={playlist.node.data.cover.url}
-                />
-              </div>
+              <PlaylistCard
+                url={playlist.url}
+                title={playlist.title}
+                featured={playlist.featured}
+                cover={playlist.cover.gatsbyImageData}
+              />
             )
-          })} */}
+          })}
         </div>
       </div>
     </Layout>
   )
 }
 
-// export const playlistquery = graphql`
-//   query playlists {
-//     allPrismicPlaylists(sort: { fields: data___date, order: DESC }) {
-//       edges {
-//         node {
-//           data {
-//             title {
-//               text
-//             }
-//             featured {
-//               raw
-//             }
-//             url {
-//               url
-//             }
-//             cover {
-//               url
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const playlistquery = graphql`
+  query playlists {
+    allDatoCmsPlaylist(sort: { fields: date, order: DESC }) {
+      nodes {
+        title
+        url
+        featured
+        date
+        cover {
+          gatsbyImageData(
+            width: 700
+            placeholder: BLURRED
+            forceBlurhash: false
+          )
+        }
+      }
+    }
+  }
+`
 
 export default Playlists

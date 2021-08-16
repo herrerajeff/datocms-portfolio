@@ -27,7 +27,8 @@ const About = ({ data }) => {
         className="fixed md:w-104 inset-0 md:inset-y-0 bg-gradient-to-b from-black to-yellow-400/70 md:to-yellow-400 -z-10"
       >
         <GatsbyImage
-          className="absolute bottom-0 filter grayscale mix-blend-multiply opacity-40 md:opacity-75"
+          className="bottom-0 filter grayscale mix-blend-multiply opacity-40 md:opacity-75"
+          style={{ position: "absolute" }}
           image={aboutContent.portrait}
           alt="Jeff Herrera Portrait"
         />

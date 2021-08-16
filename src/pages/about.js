@@ -34,8 +34,8 @@ const About = ({ data }) => {
         />
       </motion.div>
       <Seo title="About" />
-      <div className="container-thin mt-24">
-        <h1 className="text-6xl font-serif text-white leading-tight">
+      <div className="container-thin md:mt-24">
+        <h1 className="text-4xl md:text-6xl font-serif text-white leading-tight">
           {aboutContent.quote}
         </h1>
         <p className="text-sm mt-4">{aboutContent.attribution}</p>

@@ -7,6 +7,7 @@ import PlaylistCard from "../components/playlist_card"
 
 const Playlists = ({ data }) => {
   const playlist = data.allDatoCmsPlaylist.nodes
+  const randomPlaylist = playlist[Math.floor(Math.random() * playlist.length)]
 
   return (
     <Layout>
@@ -14,30 +15,31 @@ const Playlists = ({ data }) => {
       <div className="container mt-12 2xl:mt-20">
         <div className="mx-auto text-center">
           <h1 className="text-yellow-400 mb-4">Playlists</h1>
-          <h3>
-            This is the music that keeps me going.{" "}
-            <br className="visible md:hidden" />
+          <p className="text-base md:text-xl">
+            This is the music that keeps me going. <br className="md:hidden" />
             Let's jam.
-          </h3>
-          <div className="text-xs mt-6 bg-gray-900 py-2 px-4 rounded-full flex-none inline-flex justify-center items-center">
+          </p>
+          <a
+            href={randomPlaylist.url}
+            target="_blank"
+            rel="nofollower noreferrer"
+            className="btn text-sm mt-6 bg-gray-900 py-2 px-4 rounded-full flex-none inline-flex justify-center items-center"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5 mr-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              aria-hidden="true"
+              viewBox="0 0 640 512"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                d="M592 192H473.26c12.69 29.59 7.12 65.2-17 89.32L320 417.58V464c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48V240c0-26.51-21.49-48-48-48zM480 376c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm-46.37-186.7L258.7 14.37c-19.16-19.16-50.23-19.16-69.39 0L14.37 189.3c-19.16 19.16-19.16 50.23 0 69.39L189.3 433.63c19.16 19.16 50.23 19.16 69.39 0L433.63 258.7c19.16-19.17 19.16-50.24 0-69.4zM96 248c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm128 128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm0-128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm0-128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24zm128 128c-13.25 0-24-10.75-24-24 0-13.26 10.75-24 24-24s24 10.74 24 24c0 13.25-10.75 24-24 24z"
+                fill="currentColor"
               />
             </svg>
-            Links are Spotify only.
-          </div>
+            Feeling Lucky? Roll the dice.
+          </a>
         </div>
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
+        <div className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
           {playlist.map(playlist => {
             return (
               <PlaylistCard

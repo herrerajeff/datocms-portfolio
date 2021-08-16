@@ -28,11 +28,11 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Designer" />
       <motion.div
-        className="relative flex flex-col items-center h-[36rem] md:h-[44rem]"
+        className="relative flex flex-col items-center h-[28rem] md:h-[44rem]"
         style={{ opacity, filter }}
       >
         <div className="fixed">
-          <div className="mt-8 md:mt-20 mb-24 relative">
+          <div className="mt-0 md:mt-20 mb-12 md:mb-24 relative">
             <span className="absolute left-1/2 block bg-yellow-900/30 rounded-full h-112 w-112 blur-3xl -translate-x-1/2 -translate-y-64"></span>
             <span className="rounded-full w-40 h-40 blur-2xl bg-yellow-400/50 block absolute -top-12 left-1/3 translate-x-8"></span>
             <span className="rounded-full w-40 h-40 blur-2xl bg-white/60 block absolute -bottom-24 right-1/3 -translate-x-8"></span>
@@ -82,13 +82,13 @@ const IndexPage = ({ data }) => {
               </defs>
             </svg>
           </div>
-          <h1 className="text-[1.8rem] sm:text-4xl md:text-5xl xl:text-7xl font-serif text-white text-center leading-9 md:leading-12 xl:leading-14">
-            I’m Jeff—a designer from <br />
-            New York City enhancing physical <br />
-            &amp; digital brand experiences.
+          <h1 className="container text-[1.675rem] md:text-5xl xl:text-7xl font-serif text-white text-center leading-9 md:leading-12 xl:leading-[5rem]">
+            I’m Jeff—a designer from <br className="hidden lg:block" />
+            New York City enhancing physical
+            <br className="hidden lg:block" /> &amp; digital brand experiences.
           </h1>
-          <p className="mt-8 text-md md:text-lg text-center max-w-sm md:max-w-2xl mx-auto block leading-[0.5]">
-            Currently Senior Designer &amp; <br className="md:hidden" />{" "}
+          <p className="mt-8 text-sm sm:text-lg text-center max-w-sm md:max-w-2xl mx-auto block leading-[0.5]">
+            Currently Senior Designer &amp; <br className="block md:hidden" />
             Competitive Cold Brew Drinker at @
             <a
               href="https://www.braze.com"

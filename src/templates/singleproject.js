@@ -107,15 +107,15 @@ const SingleProject = ({ data }) => {
             image={project.featureImage.gatsbyImageData}
           />
         </div>
-        <div className="container pt-32 pb-48 text-center">
-          <h2 className="text-7xl font-serif text-white leading-tight">
+        <div className="pt-12 md:pt-32 pb-40 md:pb-48 text-center">
+          <h2 className="container text-4xl md:text-7xl font-serif text-white leading-tight">
             {project.title}
           </h2>
-          <p className="text-xl w-full px-16 lg:w-3/5 xl:w-1/2 text-white mt-2 mx-auto">
+          <p className="container text-sm md:text-xl w-full px-16 lg:w-3/5 xl:w-1/2 text-white mt-2 mx-auto">
             {project.description}
           </p>
           <hr className="w-12 h-px bg-white mt-8 opacity-60 mx-auto" />
-          <p className="text-sm text-white/60 mt-8">
+          <p className="container px-16 text-xs md:text-sm text-white/60 mt-8">
             Product Design, Information Architecture, UX, E-Commerce
           </p>
         </div>
@@ -128,11 +128,11 @@ const SingleProject = ({ data }) => {
             fluid={project.featureImage.fluid}
             image={project.featureImage.gatsbyImageData}
           />
-          <div className="mt-24">
+          <div className="md:mt-24">
             {project.projectArticle.map(block => (
               <div key={block.id}>
                 {block.model.apiKey === "section_copy" && (
-                  <div className="mt-16 mb-8 lg:mt-44 lg:mb-32 grid gap=8 md:gap-12 md:grid-cols-2">
+                  <div className="mt-16 md:mb-8 lg:mt-44 lg:mb-32 grid gap-0 md:gap-12 md:grid-cols-2">
                     <div
                       dangerouslySetInnerHTML={{
                         __html: block.headingNode.childMarkdownRemark.html,
@@ -143,7 +143,7 @@ const SingleProject = ({ data }) => {
                       dangerouslySetInnerHTML={{
                         __html: block.bodyNode.childMarkdownRemark.html,
                       }}
-                      className="mt-8 md:mt-0 space-y-8 text-lg leading-relaxed"
+                      className="mt-8 md:mt-0 space-y-8 text-base md:text-lg leading-relaxed"
                     ></div>
                   </div>
                 )}

@@ -23,8 +23,8 @@ const Writing = () => (
     <Seo title="Writing" />
     <div className="container mt-12 2xl:mt-20">
       <h1 className="text-3xl text-yellow-400 mb-6">2020</h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-6">
-        <div className="rounded-xl bg-white/5 border border-white/20 hover:border-yellow-400/70 p-6 flex-col justify-between items-between col-span-2 transition duration-300">
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="rounded-xl bg-white/10 border border-white/20 hover:border-yellow-400/70 p-6 flex-col justify-between items-between col-span-2 transition duration-300">
           <Link
             to="/playlists"
             className="flex-grow block h-48 text-white hover:text-yellow-400 font-bold group text-3xl"
@@ -43,12 +43,12 @@ const Writing = () => (
         </div>
         {Posts.map(Post => (
           <div
-            className="rounded-xl bg-black border border-white/20 hover:border-yellow-400/70 p-6 flex-col justify-between items-between"
+            className="col-span-2 md:col-span-1 rounded-xl bg-white/5 border border-white/20 hover:border-yellow-400/70 p-6 flex-col justify-between items-between"
             key={Post.id}
           >
             <Link
               to="/"
-              className="flex-grow block h-48 text-xl text-white hover:text-yellow-400 font-bold group"
+              className="flex-grow block h-auto mb-8 md:mb-0 md:h-48 text-xl text-white hover:text-yellow-400 font-bold group"
             >
               {Post.name}
               <p className="transform -translate-x-4 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition duration-300">

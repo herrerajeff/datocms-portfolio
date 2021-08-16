@@ -7,7 +7,10 @@ import Nav from "./navigation"
 const Header = ({ siteTitle }) => (
   <header className="sticky inset-0 py-8 w-full text-sm flex-none z-20 container">
     <div className="flex justify-between md:grid grid-cols-3">
-      <Link to="/" className="text-yellow-400 justify-self-start">
+      <Link
+        to="/"
+        className="text-yellow-400 justify-self-start hidden md:block"
+      >
         <svg
           width={32}
           height={32}

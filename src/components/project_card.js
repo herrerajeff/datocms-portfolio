@@ -10,7 +10,7 @@ const ProjectCard = ({ title, color, description, fluid, image, slug }) => {
     >
       <GatsbyImage
         className="inset-0 w-full group-hover:scale-150 origin-top duration-1000 ease-in-out"
-        style={{ position: "absolute !important" }}
+        style={{ position: "absolute" }}
         fluid={fluid}
         image={image}
       />

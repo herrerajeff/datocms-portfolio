@@ -13,7 +13,8 @@ const PlaylistCard = ({ url, title, featured, cover }) => {
       <GatsbyImage
         image={cover}
         alt="Playlist Cover"
-        className="absolute inset-0 -z-10 blur-xl opacity-40 rotate-180"
+        className="inset-0 -z-10 blur-xl opacity-40 rotate-180"
+        style={{ position: "absolute" }}
       />
       <GatsbyImage
         image={cover}

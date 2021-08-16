@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
         style={{ opacity, filter }}
       >
         <div className="fixed">
-          <div className="mt-20 mb-24 relative">
+          <div className="mt-8 md:mt-20 mb-24 relative">
             <span className="absolute left-1/2 block bg-yellow-900/30 rounded-full h-112 w-112 blur-3xl -translate-x-1/2 -translate-y-64"></span>
             <span className="rounded-full w-40 h-40 blur-2xl bg-yellow-400/50 block absolute -top-12 left-1/3 translate-x-8"></span>
             <span className="rounded-full w-40 h-40 blur-2xl bg-white/60 block absolute -bottom-24 right-1/3 -translate-x-8"></span>

@@ -107,15 +107,15 @@ const SingleProject = ({ data }) => {
             image={project.featureImage.gatsbyImageData}
           />
         </div>
-        <div className="pt-12 md:pt-32 pb-40 md:pb-48 text-center">
-          <h2 className="container text-4xl md:text-7xl font-serif text-white leading-tight">
+        <div className="pt-4 md:pt-32 pb-40 md:pb-48 text-center">
+          <h2 className="w-80 md:w-full mx-auto text-center text-4xl md:text-7xl font-serif text-white leading-tight">
             {project.title}
           </h2>
-          <p className="container text-sm md:text-xl w-full px-16 lg:w-3/5 xl:w-1/2 text-white mt-2 mx-auto">
+          <p className="container-thin text-sm md:text-xl w-full px-16 lg:w-3/5 xl:w-1/2 text-white mt-2 mx-auto">
             {project.description}
           </p>
-          <hr className="w-12 h-px bg-white mt-8 opacity-60 mx-auto" />
-          <p className="container px-16 text-xs md:text-sm text-white/60 mt-8">
+          <hr className="w-12 h-px bg-white mt-4 md:mt-8 opacity-60 mx-auto" />
+          <p className="container px-16 text-xs md:text-sm text-white/60 mt-4 md:mt-8">
             Product Design, Information Architecture, UX, E-Commerce
           </p>
         </div>

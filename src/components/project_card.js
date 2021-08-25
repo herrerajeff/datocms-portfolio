@@ -14,7 +14,7 @@ const ProjectCard = ({ title, color, description, fluid, image, slug }) => {
         fluid={fluid}
         image={image}
       />
-      <div className="w-full h-full grid grid-rows-2 justify-between py-4 px-6 md:p-8 group-hover:backdrop-blur-md bg-gradient-to-b from-black/90 md:bg-none md:bg-black md:bg-opacity-0 group-hover:bg-opacity-90 duration-500 ease-in-out">
+      <div className="w-full h-full flex-col justify-between py-4 px-6 md:p-8 group-hover:backdrop-blur-md bg-gradient-to-b from-black/90 md:bg-none md:bg-black md:bg-opacity-0 group-hover:bg-opacity-90 duration-500 ease-in-out">
         <div>
           <h2 className="text-lg md:text-2xl md:-translate-x-24 md:opacity-0 group-hover:opacity-100 group-hover:translate-x-0 duration-500 group-hover:delay-200 ease-in-out">
             {title}
@@ -26,12 +26,8 @@ const ProjectCard = ({ title, color, description, fluid, image, slug }) => {
             &rarr;
           </p>
         </div>
-        <div className="self-end">
-          <div
-            className="w-full h-px block mb-4 scale-x-0 origin-left group-hover:scale-x-100 duration-300 group-hover:delay-300 ease-in-out"
-            style={{ background: `${color}` }}
-          />
-          <p className="text-sm md:text-base translate-y-24 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 duration-500 group-hover:delay-500 ease-in-out">
+        <div className="mt-8">
+          <p className="text-sm md:text-base translate-y-16 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 duration-500 group-hover:delay-500 ease-in-out">
             {description}
           </p>
         </div>

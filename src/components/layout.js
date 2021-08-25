@@ -27,7 +27,7 @@ const Layout = ({ children, background }) => {
   return (
     <AnimatePresence>
       <div
-        className="px-8 flex flex-col w-full min-h-full items-stretch"
+        className="px-8 flex flex-col w-full min-h-full items-stretch overflow-hidden"
         style={{ backgroundImage: `url(${background})` }}
       >
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />

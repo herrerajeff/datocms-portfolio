@@ -79,6 +79,12 @@ html {
   .project-headings h4 {
     @apply text-lg md:text-2xl;
   }
+  strong {
+    @apply font-bold;
+  }
+  .callout strong {
+    @apply text-black;
+  }
 }
 
 @keyframes marquee {

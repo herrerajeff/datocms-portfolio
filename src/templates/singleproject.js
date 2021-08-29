@@ -54,8 +54,28 @@ export const query = graphql`
         }
         ... on DatoCmsVideo {
           id
+          video {
+            url
+          }
+          model {
+            apiKey
+          }
+        }
+        ... on DatoCmsVideoExternal {
+          id
           videoExternal {
             url
+          }
+          model {
+            apiKey
+          }
+        }
+        ... on DatoCmsCallout {
+          id
+          calloutNode {
+            childMarkdownRemark {
+              html
+            }
           }
           model {
             apiKey
@@ -89,6 +109,7 @@ export const query = graphql`
 
 const SingleProject = ({ data }) => {
   const project = data.datoCmsProject
+  const noResults = data.datoCmsProject.results.length > 0
 
   return (
     <Layout>
@@ -102,7 +123,7 @@ const SingleProject = ({ data }) => {
       >
         <div className="absolute inset-0 blur-lg opacity-50 mix-blend-multiply">
           <GatsbyImage
-            className="w-full"
+            className="w-full grayscale"
             fluid={project.featureImage.fluid}
             image={project.featureImage.gatsbyImageData}
           />
@@ -154,6 +175,25 @@ const SingleProject = ({ data }) => {
                     image={block.img.gatsbyImageData}
                   />
                 )}
+                {block.model.apiKey === "video" && (
+                  <video
+                    playsinline
+                    autoplay
+                    muted
+                    loop
+                    className="w-full h-auto"
+                  >
+                    <source type="video/mp4" src={block.video.url} />
+                  </video>
+                )}
+                {block.model.apiKey === "callout" && (
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: block.calloutNode.childMarkdownRemark.html,
+                    }}
+                    className="w-full mt-12 bg-white rounded-xl text-xl md:text-3xl callout px-12 py-10 md:px-24 md:py-16"
+                  ></div>
+                )}
                 {block.model.apiKey === "half_image" && (
                   <div className="grid md:grid-cols-2 gap-12">
                     <GatsbyImage
@@ -171,27 +211,29 @@ const SingleProject = ({ data }) => {
               </div>
             ))}
           </div>
-          <div className="mt-24 mb-12">
-            <h3 className="uppercase text-white font-bold text-sm tracking-[0.2em]">
-              Results
-            </h3>
-            <div className="px-12 py-8 text-center md:text-left grid md:grid-cols-3 content-around gap-12 bg-white mt-4 rounded-xl">
-              {project.results.map(block => (
-                <div key={block.id}>
-                  {block.model.apiKey === "result" && (
-                    <div className="flex-column">
-                      <h3 style={{ color: `${project.color.hex}` }}>
-                        {block.stat}
-                      </h3>
-                      <p className="text-3xl font-bold text-black uppercase">
-                        {block.statDescription}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
+          {noResults && (
+            <div className="mt-24 mb-12">
+              <h3 className="uppercase text-white font-bold text-sm tracking-[0.2em]">
+                Results
+              </h3>
+              <div className="px-12 py-8 text-center md:text-left grid md:grid-cols-3 content-around gap-12 bg-white mt-4 rounded-xl">
+                {project.results.map(block => (
+                  <div key={block.id}>
+                    {block.model.apiKey === "result" && (
+                      <div className="flex-column">
+                        <h3 style={{ color: `${project.color.hex}` }}>
+                          {block.stat}
+                        </h3>
+                        <p className="text-3xl font-bold text-black uppercase">
+                          {block.statDescription}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </Layout>

@@ -6,10 +6,10 @@ const ProjectCard = ({ title, color, description, fluid, image, slug }) => {
   return (
     <Link
       to={slug}
-      className="aspect-w-3 aspect-h-4 bg-gray-300 rounded-lg overflow-hidden group ring-1 ring-white/40 md:ring-transparent hover:ring-white/30 duration-300 ease-in-out relative"
+      className="aspect-w-3 aspect-h-2 bg-gray-300 rounded overflow-hidden group ring-1 ring-white/40 md:ring-transparent hover:ring-white/30 duration-300 ease-in-out relative object-cover"
     >
       <GatsbyImage
-        className="inset-0 w-full group-hover:scale-[1.2] origin-top duration-1000 ease-in-out"
+        className="w-full group-hover:scale-[1.2] origin-top duration-1000 ease-in-out"
         style={{ position: "absolute" }}
         fluid={fluid}
         image={image}

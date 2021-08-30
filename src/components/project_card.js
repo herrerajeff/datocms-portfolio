@@ -20,7 +20,7 @@ const ProjectCard = ({ title, color, description, fluid, image, slug }) => {
             {title}
           </h2>
           <p
-            className="text-lg md:text-2xl font-bold md:-translate-x-24 md:opacity-0 group-hover:opacity-100 group-hover:translate-x-0 duration-500 group-hover:delay-300 ease-in-out"
+            className="text-lg md:text-2xl font-bold md:-translate-x-24 opacity-0 group-hover:opacity-100 group-hover:translate-x-0 duration-500 group-hover:delay-300 ease-in-out"
             style={{ color: `${color}` }}
           >
             &rarr;

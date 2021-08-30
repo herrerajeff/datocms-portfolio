@@ -177,8 +177,8 @@ const SingleProject = ({ data }) => {
                 )}
                 {block.model.apiKey === "video" && (
                   <video
-                    playsinline
-                    autoplay
+                    playsInline
+                    autoPlay
                     muted
                     loop
                     className="w-full h-auto"
@@ -197,12 +197,12 @@ const SingleProject = ({ data }) => {
                 {block.model.apiKey === "half_image" && (
                   <div className="grid md:grid-cols-2 gap-12">
                     <GatsbyImage
-                      className="w-full mt-12 rounded"
+                      className="w-full mt-12 rounded self-start"
                       fluid={block.leftImage.fluid}
                       image={block.leftImage.gatsbyImageData}
                     />
                     <GatsbyImage
-                      className="w-full mt-12 rounded"
+                      className="w-full h-auto mt-12 rounded self-start"
                       fluid={block.rightImage.fluid}
                       image={block.rightImage.gatsbyImageData}
                     />

@@ -132,7 +132,6 @@ const IndexPage = ({ data }) => {
                 color={work.color.hex}
                 description={work.description}
                 fluid={work.homeImage.fluid}
-                image={work.homeImage.gatsbyImageData}
                 slug={work.slug}
               />
             )
@@ -150,9 +149,8 @@ export const workQuery = graphql`
       nodes {
         homeImage {
           fluid {
-            src
+            ...GatsbyDatoCmsFluid
           }
-          gatsbyImageData
         }
         title
         description

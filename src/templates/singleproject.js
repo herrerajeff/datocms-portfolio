@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -19,9 +19,8 @@ export const query = graphql`
       description
       featureImage {
         fluid {
-          base64
+          ...GatsbyDatoCmsFluid
         }
-        gatsbyImageData
       }
       projectType
       projectArticle {
@@ -44,9 +43,8 @@ export const query = graphql`
           id
           img {
             fluid {
-              base64
+              ...GatsbyDatoCmsFluid
             }
-            gatsbyImageData
           }
           model {
             apiKey
@@ -85,15 +83,13 @@ export const query = graphql`
           id
           leftImage {
             fluid {
-              base64
+              ...GatsbyDatoCmsFluid
             }
-            gatsbyImageData
           }
           rightImage {
             fluid {
-              base64
+              ...GatsbyDatoCmsFluid
             }
-            gatsbyImageData
           }
           model {
             apiKey
@@ -122,10 +118,9 @@ const SingleProject = ({ data }) => {
         }}
       >
         <div className="absolute inset-0 blur-lg opacity-50 mix-blend-multiply">
-          <GatsbyImage
+          <Img
             className="w-full grayscale"
             fluid={project.featureImage.fluid}
-            image={project.featureImage.gatsbyImageData}
           />
         </div>
         <div className="pt-4 md:pt-32 pb-40 md:pb-48 text-center">
@@ -143,11 +138,10 @@ const SingleProject = ({ data }) => {
       </div>
       <div className="pt-12 flex flex-col w-full min-h-full items-stretch">
         <div className="container flex-grow flex-shrink-0 ">
-          <GatsbyImage
+          <Img
             className="w-full -mt-40 rounded"
             style={{ boxShadow: "0 -24px 64px rgba(0,0,0,0.3)" }}
             fluid={project.featureImage.fluid}
-            image={project.featureImage.gatsbyImageData}
           />
           <div className="md:mt-24">
             {project.projectArticle.map(block => (
@@ -169,10 +163,9 @@ const SingleProject = ({ data }) => {
                   </div>
                 )}
                 {block.model.apiKey === "inline_image" && (
-                  <GatsbyImage
+                  <Img
                     className="w-full mt-12 rounded"
                     fluid={block.img.fluid}
-                    image={block.img.gatsbyImageData}
                   />
                 )}
                 {block.model.apiKey === "video" && (
@@ -196,15 +189,13 @@ const SingleProject = ({ data }) => {
                 )}
                 {block.model.apiKey === "half_image" && (
                   <div className="grid md:grid-cols-2 gap-12">
-                    <GatsbyImage
+                    <Img
                       className="w-full mt-12 rounded self-start"
                       fluid={block.leftImage.fluid}
-                      image={block.leftImage.gatsbyImageData}
                     />
-                    <GatsbyImage
+                    <Img
                       className="w-full h-auto mt-12 rounded self-start"
                       fluid={block.rightImage.fluid}
-                      image={block.rightImage.gatsbyImageData}
                     />
                   </div>
                 )}

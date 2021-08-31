@@ -1,5 +1,5 @@
 import * as React from "react"
-import { GatsbyImage } from "gatsby-plugin-image"
+import Img from "gatsby-image"
 import { Link } from "gatsby"
 
 const ProjectCard = ({ title, color, description, fluid, image, slug }) => {
@@ -8,11 +8,10 @@ const ProjectCard = ({ title, color, description, fluid, image, slug }) => {
       to={slug}
       className="aspect-w-3 aspect-h-2 bg-gray-300 rounded overflow-hidden group ring-1 ring-white/40 md:ring-transparent hover:ring-white/30 duration-300 ease-in-out relative object-cover"
     >
-      <GatsbyImage
+      <Img
         className="w-full group-hover:scale-[1.2] origin-top duration-1000 ease-in-out"
         style={{ position: "absolute" }}
         fluid={fluid}
-        image={image}
       />
       <div className="w-full h-full flex-col justify-between py-4 px-6 md:p-8 group-hover:backdrop-blur-lg bg-gradient-to-b from-black/90 md:bg-none md:bg-black md:bg-opacity-0 group-hover:bg-opacity-90 duration-500 ease-in-out">
         <div>

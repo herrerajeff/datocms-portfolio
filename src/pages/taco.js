@@ -1,8 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-// import { Link } from "gatsby"
-// import { motion } from "framer-motion"
+import Img from "gatsby-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -26,16 +24,16 @@ const Taco = ({ data }) => {
           </h2>
         </div>
         <div className="text-center mt-8 container">
-          <GatsbyImage
-            className="border-2 border-white taco-spin"
-            image={document.featuredImage.gatsbyImageData}
+          <Img
+            className="border-2 border-white taco-spin w-1/2 mx-auto"
+            fluid={document.featuredImage.fluid}
             alt="Jeff Herrera Portrait"
           />
           <div className="flex md:justify-between items-center flex-wrap justify-center mx-auto mt-12">
             {document.glitters.map(image => {
               return (
                 <div className="object-contain w-72">
-                  <GatsbyImage image={image.gatsbyImageData} />
+                  <Img fluid={image.fluid} />
                 </div>
               )
             })}
@@ -51,10 +49,14 @@ export const tacoquery = graphql`
     datoCmsTaco {
       title
       featuredImage {
-        gatsbyImageData(width: 700, placeholder: BLURRED, forceBlurhash: false)
+        fluid {
+          ...GatsbyDatoCmsFluid
+        }
       }
       glitters {
-        gatsbyImageData(width: 700, placeholder: BLURRED, forceBlurhash: false)
+        fluid {
+          ...GatsbyDatoCmsFluid
+        }
       }
       background {
         url

@@ -12,6 +12,13 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
           }
         }
       }
+      allDatoCmsBlog {
+        edges {
+          node {
+            slug
+          }
+        }
+      }
     }
   `)
 
@@ -23,6 +30,18 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
       component: require.resolve("./src/templates/singleproject.js"),
       context: {
         slug: project.slug,
+      },
+    })
+  })
+
+  results.data.allDatoCmsBlog.edges.forEach(edge => {
+    const blog = edge.node
+
+    createPage({
+      path: `/writing/${blog.slug}/`,
+      component: require.resolve("./src/templates/singleblog.js"),
+      context: {
+        slug: blog.slug,
       },
     })
   })

@@ -73,6 +73,9 @@ html {
   .taco-spin {
     animation: spin 5s linear forwards infinite;
   }
+  .image__float {
+    animation: float-lr 5s ease-in-out forwards infinite;
+  }
   .project-headings h3 {
     @apply text-lg md:text-2xl text-white;
   }
@@ -84,6 +87,32 @@ html {
   }
   .callout strong {
     @apply text-black;
+  }
+  .article__style h3 {
+    @apply text-white font-bold text-2xl pt-12;
+  }
+  .article__style p {
+    @apply mt-8;
+  }
+  .article__style blockquote {
+    @apply pt-12 pb-8 px-10 bg-gray-900 mt-16 mb-16 block rounded-xl border border-white/10;
+  }
+  .article__style blockquote p {
+    @apply mt-0;
+  }
+  .article__style blockquote::before {
+    content: "❝";
+    font-size: 5rem;
+    color: #fbbf25;
+  }
+}
+
+@keyframes float-lr {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20);
   }
 }
 

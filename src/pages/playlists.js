@@ -46,7 +46,7 @@ const Playlists = ({ data }) => {
                 url={playlist.url}
                 title={playlist.title}
                 featured={playlist.featured}
-                cover={playlist.cover.fluid}
+                cover={playlist.cover.gatsbyImageData}
               />
             )
           })}
@@ -65,9 +65,7 @@ export const playlistquery = graphql`
         featured
         date
         cover {
-          fluid {
-            ...GatsbyDatoCmsFluid
-          }
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
     }

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -13,7 +13,7 @@ export const query = graphql`
         ... on DatoCmsVideoExternal {
           id
           videoExternal {
-            url
+            providerUid
           }
           model {
             apiKey
@@ -22,9 +22,7 @@ export const query = graphql`
         ... on DatoCmsInlineImage {
           id
           img {
-            fluid {
-              ...GatsbyDatoCmsFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
           }
           model {
             apiKey
@@ -56,9 +54,7 @@ export const query = graphql`
           id
           caption
           image {
-            fluid {
-              ...GatsbyDatoCmsFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
           }
           model {
             apiKey
@@ -66,9 +62,7 @@ export const query = graphql`
         }
       }
       featuredImage {
-        fluid {
-          ...GatsbyDatoCmsFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
       slug
       title
@@ -89,26 +83,17 @@ const SingleBlog = ({ data }) => {
     <Layout>
       <Seo title={article.title} />
       <div className="md:mt-24 text-center">
-        <h2 className="w-80 md:w-full mx-auto text-center text-3xl md:text-5xl font-serif text-white leading-tight">
+        <h2 className="w-80 md:w-full mx-auto text-center text-3xl md:text-5xl font-serif text-white leading-tight font-light">
           {article.title}
         </h2>
         <p className="text-xs tracking-wide mt-2 font-light text-gray-500">
           {article.meta.publishedAt}
         </p>
       </div>
-
-      <div className="mt-8 mx-auto text-center">
-        <Link
-          to="/writing"
-          className="inline-block btn bg-white/10 border-transparent"
-        >
-          &larr; Writing
-        </Link>
-      </div>
       <article className="container mx-auto mb-12">
-        <Img
+        <GatsbyImage
           className="w-full mt-12 rounded"
-          fluid={article.featuredImage.fluid}
+          image={article.featuredImage.gatsbyImageData}
         />
         {article.article.map(block => (
           <div key={block.id}>
@@ -121,16 +106,16 @@ const SingleBlog = ({ data }) => {
               ></div>
             )}
             {block.model.apiKey === "inline_image" && (
-              <Img
-                className="w-full h-112 mt-12 rounded"
-                fluid={block.img.fluid}
+              <GatsbyImage
+                className="w-full h-112 my-12 md:my-24 rounded"
+                image={block.img.gatsbyImageData}
               />
             )}
             {block.model.apiKey === "figure" && (
-              <div>
-                <Img
-                  className="w-full mt-12 md:mt-20 rounded"
-                  fluid={block.image.fluid}
+              <div className=" my-12 md:my-24 ">
+                <GatsbyImage
+                  className="w-full rounded"
+                  image={block.image.gatsbyImageData}
                 />
                 <p className="text-xs mt-4">{block.caption}</p>
               </div>
@@ -139,6 +124,20 @@ const SingleBlog = ({ data }) => {
               <video playsInline autoPlay muted loop className="w-full h-auto">
                 <source type="video/mp4" src={block.video.url} />
               </video>
+            )}
+            {block.model.apiKey === "video_external" && (
+              <div className="mt-12">
+                <iframe
+                  className="aspect-w-16 aspect-h-9 w-full"
+                  src={`https://www.youtube.com/embed/${block.videoExternal.providerUid}`}
+                  frameBorder="0"
+                  title={article.title}
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  webkitallowfullscreen="true"
+                  mozallowfullscreen="true"
+                  allowFullScreen
+                />
+              </div>
             )}
             {block.model.apiKey === "callout" && (
               <div
@@ -150,10 +149,11 @@ const SingleBlog = ({ data }) => {
             )}
           </div>
         ))}
-        <div className="mt-12 md:mt-24 mx-auto text-center">
+        <div className="mt-16 container-thin">
+          <hr className="w-8 border-t border-white/20 pt-12" />
           <Link
             to="/writing"
-            className="inline-block btn bg-white/10 border-transparent"
+            className="inline-block btn bg-white/10 border-transparent "
           >
             &larr; Writing
           </Link>

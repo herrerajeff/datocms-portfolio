@@ -28,13 +28,13 @@ const Writing = ({ data }) => {
     <Layout>
       <Seo title="Writing" />
       <div className="container-thin mt-0 md:mt-20">
-        <h2 className="mb-8 md:mb-24 font-serif text-center text-3xl md:text-5xl text-yellow-400">
+        <h2 className="mb-8 md:mb-24 font-serif text-center text-3xl md:text-5xl text-white font-light">
           Writing
         </h2>
         <div className="flex-col">
           {featured.map(featured => (
             <div
-              className="border border-white/20 hover:border-yellow-400/70 rounded-lg flex justify-between items-center transition duration-300 bg-black/60 relative group"
+              className="border border-white/20 hover:border-yellow-400/70 rounded-lg flex justify-between items-center transition duration-300 bg-black/60 relative group mb-8"
               key={featured.id}
             >
               <Img
@@ -46,12 +46,7 @@ const Writing = ({ data }) => {
                 to={featured.slug}
                 className="flex-col w-full text-xl text-white hover:text-yellow-400 font-bold group p-8"
               >
-                <p className="flex">
-                  {featured.title}
-                  <p className="ml-2 transform -translate-x-4 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition duration-300">
-                    →
-                  </p>
-                </p>
+                <p className="article__title">{featured.title}</p>
                 <p className="text-sm font-light text-gray-400">
                   {featured.description}
                 </p>
@@ -59,21 +54,21 @@ const Writing = ({ data }) => {
                   {featured.meta.publishedAt}
                 </p>
               </Link>
-              <Link
+              {/* <Link
                 to="/"
                 className="flex-none tracking-wide text-xs text-white rounded-full bg-white/10 hover:bg-white hover:text-black py-2 px-4 inline-block transition duration-300 mb-8 md:mb-0 md:mr-8"
               >
                 {article.category.tag} ›
-              </Link>
+              </Link> */}
             </div>
           ))}
           {article.map(article => (
             <div
-              className="border border-white/20 hover:border-yellow-400/70 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center transition duration-300 bg-black/60 relative group"
+              className="border border-white/20 hover:border-yellow-400/70 rounded-lg flex flex-col md:flex-row justify-between items-start md:items-center transition duration-300 bg-black/70 relative group mb-8"
               key={article.id}
             >
               <Img
-                className="w-80 -z-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition duration-300 blur"
+                className="w-96 -z-10 left-1/2 opacity-0 group-hover:opacity-100 transition duration-300 blur-sm"
                 style={{ position: "absolute" }}
                 fluid={article.featuredImage.fluid}
               />
@@ -81,25 +76,20 @@ const Writing = ({ data }) => {
                 to={article.slug}
                 className="flex-col w-full text-xl text-white hover:text-yellow-400 font-bold group p-8"
               >
-                <p className="flex">
-                  {article.title}
-                  <p className="ml-2 transform -translate-x-4 group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition duration-300">
-                    →
-                  </p>
-                </p>
+                <p className="article__title mb-2">{article.title}</p>
                 <p className="text-sm font-light text-gray-400">
                   {article.description}
                 </p>
-                <p className="text-xs tracking-wide mt-4 font-light text-gray-500">
+                <p className="text-xs tracking-wide mt-6 font-light text-gray-500">
                   {article.meta.publishedAt}
                 </p>
               </Link>
-              <Link
+              {/* <Link
                 to="/"
                 className="flex-none tracking-wide text-xs text-white rounded-full bg-white/10 hover:bg-white hover:text-black py-2 px-4 inline-block transition duration-300 mb-8 md:mb-0 ml-8 md:ml-0 md:mr-8"
               >
                 {article.category.tag} ›
-              </Link>
+              </Link> */}
             </div>
           ))}
         </div>

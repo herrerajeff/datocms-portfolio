@@ -31,7 +31,7 @@ const Layout = ({ children, background }) => {
         style={{ backgroundImage: `url(${background})` }}
       >
         <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <div className="flex-grow flex-shrink-0 relative">
+        <div className="flex-grow flex-shrink-0 relative mt-24">
           <motion.main
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

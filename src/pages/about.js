@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { motion } from "framer-motion"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -11,7 +11,7 @@ const About = ({ data }) => {
   const aboutContent = {
     quote: document.quote,
     attribution: document.quoteAttribution,
-    portrait: document.portrait.fluid,
+    portrait: document.portrait.gatsbyImageData,
     bio: document.bioNode.childMarkdownRemark.html,
   }
 
@@ -26,10 +26,10 @@ const About = ({ data }) => {
         }}
         className="fixed md:w-104 inset-0 md:inset-y-0 bg-gradient-to-b from-black to-yellow-400/70 md:to-yellow-400 -z-10"
       >
-        <Img
+        <GatsbyImage
           className="bottom-0 filter grayscale mix-blend-multiply opacity-40 md:opacity-75 w-full"
           style={{ position: "absolute" }}
-          fluid={aboutContent.portrait}
+          image={aboutContent.portrait}
           alt="Jeff Herrera Portrait"
         />
       </motion.div>
@@ -56,9 +56,7 @@ export const aboutquery = graphql`
       quote
       quoteAttribution
       portrait {
-        fluid {
-          ...GatsbyDatoCmsFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
       bioNode {
         childMarkdownRemark {

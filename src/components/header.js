@@ -5,7 +5,10 @@ import { Link } from "gatsby"
 import Nav from "./navigation"
 
 const Header = ({ siteTitle }) => (
-  <header className="sticky inset-0 py-8 w-full text-sm flex-none z-20 container">
+  <header
+    className="left-1/2 -translate-x-1/2 py-8 w-full text-sm flex-none z-20 container"
+    style={{ position: "fixed" }}
+  >
     <div className="flex justify-between md:grid grid-cols-3">
       <Link
         to="/"

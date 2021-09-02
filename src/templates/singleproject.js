@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -18,9 +18,7 @@ export const query = graphql`
       }
       description
       featureImage {
-        fluid {
-          ...GatsbyDatoCmsFluid
-        }
+        gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
       projectType
       projectArticle {
@@ -42,9 +40,7 @@ export const query = graphql`
         ... on DatoCmsInlineImage {
           id
           img {
-            fluid {
-              ...GatsbyDatoCmsFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
           }
           model {
             apiKey
@@ -62,7 +58,7 @@ export const query = graphql`
         ... on DatoCmsVideoExternal {
           id
           videoExternal {
-            url
+            providerUid
           }
           model {
             apiKey
@@ -82,14 +78,10 @@ export const query = graphql`
         ... on DatoCmsHalfImage {
           id
           leftImage {
-            fluid {
-              ...GatsbyDatoCmsFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
           }
           rightImage {
-            fluid {
-              ...GatsbyDatoCmsFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
           }
           model {
             apiKey
@@ -118,13 +110,13 @@ const SingleProject = ({ data }) => {
         }}
       >
         <div className="absolute inset-0 blur-lg opacity-50 mix-blend-multiply">
-          <Img
+          <GatsbyImage
             className="w-full grayscale"
-            fluid={project.featureImage.fluid}
+            image={project.featureImage.gatsbyImageData}
           />
         </div>
         <div className="pt-4 md:pt-32 pb-40 md:pb-48 text-center">
-          <h2 className="w-80 md:w-full mx-auto text-center text-4xl md:text-7xl font-serif text-white leading-tight">
+          <h2 className="w-80 md:w-full mx-auto text-center text-4xl md:text-5xl lg:text-7xl font-serif text-white leading-tight">
             {project.title}
           </h2>
           <p className="container-thin text-sm md:text-xl w-full px-16 lg:w-3/5 xl:w-1/2 text-white mt-2 mx-auto">
@@ -138,10 +130,10 @@ const SingleProject = ({ data }) => {
       </div>
       <div className="pt-12 flex flex-col w-full min-h-full items-stretch">
         <div className="container flex-grow flex-shrink-0 ">
-          <Img
+          <GatsbyImage
             className="w-full -mt-40 rounded"
             style={{ boxShadow: "0 -24px 64px rgba(0,0,0,0.3)" }}
-            fluid={project.featureImage.fluid}
+            image={project.featureImage.gatsbyImageData}
           />
           <div className="md:mt-24">
             {project.projectArticle.map(block => (
@@ -163,9 +155,10 @@ const SingleProject = ({ data }) => {
                   </div>
                 )}
                 {block.model.apiKey === "inline_image" && (
-                  <Img
+                  <GatsbyImage
+                    layout="fullWidth"
                     className="w-full mt-12 rounded"
-                    fluid={block.img.fluid}
+                    image={block.img.gatsbyImageData}
                   />
                 )}
                 {block.model.apiKey === "video" && (
@@ -189,13 +182,29 @@ const SingleProject = ({ data }) => {
                 )}
                 {block.model.apiKey === "half_image" && (
                   <div className="grid md:grid-cols-2 gap-12">
-                    <Img
+                    <GatsbyImage
+                      layout="fullWidth"
                       className="w-full mt-12 rounded self-start"
-                      fluid={block.leftImage.fluid}
+                      image={block.leftImage.gatsbyImageData}
                     />
-                    <Img
+                    <GatsbyImage
+                      layout="fullWidth"
                       className="w-full h-auto mt-12 rounded self-start"
-                      fluid={block.rightImage.fluid}
+                      image={block.rightImage.gatsbyImageData}
+                    />
+                  </div>
+                )}
+                {block.model.apiKey === "video_external" && (
+                  <div className="aspect-w-16 aspect-h-9 mt-12 block">
+                    <iframe
+                      className="w-full"
+                      src={`https://www.youtube.com/embed/${block.videoExternal.providerUid}`}
+                      frameBorder="0"
+                      title={project.title}
+                      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                      webkitallowfullscreen="true"
+                      mozallowfullscreen="true"
+                      allowFullScreen
                     />
                   </div>
                 )}

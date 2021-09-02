@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Link } from "gatsby"
 import { motion } from "framer-motion"
 
@@ -25,8 +25,32 @@ const Nav = () => {
     hidden: { opacity: 0, y: -20 },
     show: { opacity: 1, y: 0 },
   }
+  const handleClick = e => {
+    if (node.current.contains(e.target)) {
+      // inside click
+      return
+    }
+    // outside click
+    setNavOpen(false)
+  }
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClick)
+
+    return () => {
+      document.removeEventListener("mousedown", handleClick)
+    }
+  }, [])
+  const node = useRef()
+  useEffect(() => {
+    // add when mounted
+    document.addEventListener("mousedown", handleClick)
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener("mousedown", handleClick)
+    }
+  }, [])
   return (
-    <nav className="md:space-x-3 w-full md:w-auto flex  justify-between md:justify-self-center col-span-2 md:col-span-1 mix-blend-exclusion">
+    <nav className="md:space-x-3 w-full px-8 md:w-auto flex  justify-between md:justify-self-center col-span-2 md:col-span-1 mix-blend-exclusion">
       <Link className="btn" activeClassName="btn__active" to="/">
         Work
       </Link>
@@ -39,6 +63,7 @@ const Nav = () => {
       <div className="relative subnav">
         <button
           onClick={() => setNavOpen(!navOpen)}
+          ref={node}
           className={
             navOpen
               ? "btn__active active:outline-none outline-none focus:outline-none"

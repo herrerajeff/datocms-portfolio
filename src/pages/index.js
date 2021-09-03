@@ -145,7 +145,7 @@ export default IndexPage
 
 export const workQuery = graphql`
   query workPage {
-    allDatoCmsProject {
+    allDatoCmsProject(sort: { fields: meta___publishedAt, order: ASC }) {
       nodes {
         id
         homeImage {

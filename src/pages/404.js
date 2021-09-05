@@ -12,7 +12,7 @@ const NotFoundPage = () => (
         <h1 className="block text-9xl font-light text-yellow-400">404</h1>
         <p className="max-w-lg text-lg md:text-xl leading-relaxed">
           Looks like the cat just knocked your link off the table...use the
-          navigation to back to a page that exists.
+          navigation to get back to a page that exists.
         </p>
       </div>
     </div>

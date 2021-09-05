@@ -3,9 +3,11 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `Jeffrey Herrera`,
+    titleTemplate: "%s → Jeffrey Herrera",
     description: `The Portfolio of Jeffrey Herrera`,
-    author: `@isthatjeff`,
-    defaultSeoImage: `src/images/seo.png`,
+    url: "https://www.jeffreyherrera.com",
+    twitterUsername: `@isthatjeff`,
+    image: `/images/seo.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

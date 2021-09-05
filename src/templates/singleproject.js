@@ -19,6 +19,7 @@ export const query = graphql`
       description
       featureImage {
         gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+        url
       }
       projectType
       projectArticle {
@@ -101,10 +102,7 @@ const SingleProject = ({ data }) => {
 
   return (
     <Layout>
-      <Seo
-        title={project.title}
-        seoImage={project.featureImage.gatsbyImageData}
-      />
+      <Seo title={project.title} image={project.featureImage.url} />
       <div
         className="pt-28 -mt-40 -mx-16 relative overflow-hidden"
         style={{

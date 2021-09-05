@@ -5,6 +5,7 @@ module.exports = {
     title: `Jeffrey Herrera`,
     description: `The Portfolio of Jeffrey Herrera`,
     author: `@isthatjeff`,
+    defaultSeoImage: `src/images/seo.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

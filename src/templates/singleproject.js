@@ -101,7 +101,10 @@ const SingleProject = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={project.title} />
+      <Seo
+        title={project.title}
+        seoImage={project.featureImage.gatsbyImageData}
+      />
       <div
         className="pt-28 -mt-40 -mx-16 relative overflow-hidden"
         style={{

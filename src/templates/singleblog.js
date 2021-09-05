@@ -81,7 +81,10 @@ const SingleBlog = ({ data }) => {
 
   return (
     <Layout>
-      <Seo title={article.title} />
+      <Seo
+        title={article.title}
+        seoImage={article.featuredImage.gatsbyImageData}
+      />
       <div className="md:mt-24 text-center">
         <h2 className="w-80 md:w-full mx-auto text-center text-3xl md:text-5xl font-serif text-white leading-tight font-light">
           {article.title}

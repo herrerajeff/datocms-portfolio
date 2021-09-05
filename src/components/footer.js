@@ -17,6 +17,9 @@ const Footer = () => {
         }}
         className="container"
       >
+        <span className="my-8 block font-serif text-yellow-400 text-xl">
+          - ⟡ -
+        </span>
         <button
           onClick={() => setSocialOpen(!SocialOpen)}
           className={SocialOpen ? "btn__active z-20" : "btn z-20"}

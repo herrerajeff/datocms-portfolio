@@ -7,7 +7,7 @@ module.exports = {
     description: `The Portfolio of Jeffrey Herrera`,
     url: "https://www.jeffreyherrera.com",
     twitterUsername: `@isthatjeff`,
-    image: `/images/seo.png`,
+    image: `https://www.jeffreyherrera.com/images/seo.png`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -28,11 +28,11 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Designer" />
       <motion.div
-        className="relative flex flex-col items-center h-[28rem] md:h-[44rem]"
+        className="relative w-full flex flex-col items-center h-[28rem] md:h-[44rem]"
         style={{ opacity, filter }}
       >
         <div className="fixed">
-          <div className="-mt-8 md:mt-20 mb-12 md:mb-24 relative">
+          <div className="-mt-6 md:mt-20 mb-12 md:mb-24 relative">
             <span className="absolute left-1/2 block bg-yellow-900/30 rounded-full h-112 w-112 blur-3xl -translate-x-1/2 -translate-y-64"></span>
             <span className="rounded-full w-40 h-40 blur-2xl bg-yellow-400/50 block absolute -top-12 left-1/3 translate-x-8"></span>
             <span className="rounded-full w-40 h-40 blur-2xl bg-white/60 block absolute -bottom-24 right-1/3 -translate-x-8"></span>
@@ -81,7 +81,7 @@ const IndexPage = ({ data }) => {
               </defs>
             </svg>
           </div>
-          <h1 className="max-w-sm md:max-w-screen-xl text-[1.675em] md:text-5xl xl:text-7xl font-serif text-white text-center leading-9 md:leading-12 xl:leading-[5rem]">
+          <h1 className="text-[1.675em] md:text-5xl xl:text-7xl font-serif text-white text-center leading-9 md:leading-12 xl:leading-[5rem]">
             I’m Jeff—a designer from <br className="hidden lg:block" />
             New York City enhancing physical
             <br className="hidden lg:block" /> &amp; digital brand experiences.
@@ -93,10 +93,11 @@ const IndexPage = ({ data }) => {
               href="https://www.braze.com"
               target="_blank"
               rel="nofollow noreferrer"
-              className="relative ml-2 hover:text-yellow-400 inline-block top-[0.6rem] border-b-0"
+              alt="Braze"
+              className="relative ml-2 hover:text-yellow-400 inline-block top-[0.75rem] border-b-0"
             >
               <svg
-                className="h-[1.7rem]"
+                className="h-[1.9rem]"
                 viewBox="0 0 63 32"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"

@@ -45,6 +45,12 @@ module.exports = {
         apiUrl: "https://site-api.datocms.com",
       },
     },
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: [process.env.GA_TRACKING_ID],
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
   ],

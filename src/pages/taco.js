@@ -10,7 +10,7 @@ const Taco = ({ data }) => {
 
   return (
     <Layout background={document.background.url}>
-      <Seo title="taco" />
+      <Seo title="Taco" />
       <h2
         className="absolute block text-3xl md:text-6xl font-serif leading-tight z-10 left-0 right-0 -mx-8 taco-marquee"
         style={{

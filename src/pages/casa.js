@@ -55,6 +55,7 @@ export const casaquery = graphql`
   query Casa {
     design: allDatoCmsCasa(
       filter: { category: { elemMatch: { category: { eq: "Design" } } } }
+      sort: { order: ASC, fields: meta___publishedAt }
     ) {
       nodes {
         url
@@ -67,6 +68,7 @@ export const casaquery = graphql`
     }
     misc: allDatoCmsCasa(
       filter: { category: { elemMatch: { category: { eq: "Misc" } } } }
+      sort: { order: ASC, fields: meta___publishedAt }
     ) {
       nodes {
         url
@@ -79,6 +81,7 @@ export const casaquery = graphql`
     }
     dev: allDatoCmsCasa(
       filter: { category: { elemMatch: { category: { eq: "Dev" } } } }
+      sort: { order: ASC, fields: meta___publishedAt }
     ) {
       nodes {
         url

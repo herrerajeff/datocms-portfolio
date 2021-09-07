@@ -7,11 +7,12 @@ import PlaylistCard from "../components/playlist_card"
 
 const Playlists = ({ data }) => {
   const playlist = data.allDatoCmsPlaylist.nodes
+  const latestPlaylist = playlist[0]
   const randomPlaylist = playlist[Math.floor(Math.random() * playlist.length)]
 
   return (
     <Layout>
-      <Seo title="Playlists" />
+      <Seo title="Playlists" image={latestPlaylist.cover.url} />
       <div className="container mt-12 2xl:mt-20">
         <div className="mx-auto text-center">
           <h1 className="text-yellow-400 mb-4">Playlists</h1>
@@ -66,6 +67,7 @@ export const playlistquery = graphql`
         date
         cover {
           gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          url
         }
       }
     }

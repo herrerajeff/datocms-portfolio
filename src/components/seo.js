@@ -15,12 +15,11 @@ const SEO = ({ title, description, image, article }) => {
     titleTemplate,
     defaultDescription,
     siteUrl,
-    defaultImage,
     twitterUsername,
   } = site.siteMetadata
 
   const seo = {
-    title: title || defaultTitle,
+    title: `${title} → Jeffrey Herrera` || `${defaultTitle} → Jeffrey Herrera`,
     description: description || defaultDescription,
     image: image || `${siteUrl}${seoImage}`,
     url: `${siteUrl}${pathname}`,

@@ -28,10 +28,10 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Designer" />
       <motion.div
-        className="relative w-full flex flex-col items-center h-[33rem] md:h-[44rem]"
+        className="relative w-full flex flex-col items-center h-[31rem] md:h-[44rem]"
         style={{ opacity, filter }}
       >
-        <div className="fixed">
+        <div className="md:fixed">
           <div className="-mt-6 md:mt-20 mb-12 md:mb-24 relative">
             <span className="absolute left-1/2 block bg-yellow-900/30 rounded-full h-112 w-112 blur-3xl -translate-x-1/2 -translate-y-64"></span>
             <span className="rounded-full w-40 h-40 blur-2xl bg-yellow-400/50 block absolute -top-12 left-1/3 translate-x-8"></span>
@@ -81,7 +81,7 @@ const IndexPage = ({ data }) => {
               </defs>
             </svg>
           </div>
-          <h1 className="container text-[2rem] md:text-5xl xl:text-7xl font-serif text-white text-center leading-[2.75rem] xl:leading-[5rem]">
+          <h1 className="container text-[1.7rem] md:text-5xl xl:text-7xl font-serif text-white text-center leading-[2.5rem] xl:leading-[5rem]">
             I’m Jeff—a designer from <br className="hidden lg:block" />
             New York City enhancing physical
             <br className="hidden lg:block" /> &amp; digital brand experiences.
@@ -94,7 +94,7 @@ const IndexPage = ({ data }) => {
               target="_blank"
               rel="nofollow noreferrer"
               alt="Braze"
-              className="relative ml-2 hover:text-yellow-400 inline-block top-[0.75rem] border-b-0"
+              className="relative md:ml-2 hover:text-yellow-400 inline-block md:top-[0.75rem] border-b-0"
             >
               <svg
                 className="h-[1.9rem]"

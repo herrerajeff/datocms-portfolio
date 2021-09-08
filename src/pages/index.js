@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Designer" />
       <motion.div
-        className="relative w-full flex flex-col items-center h-[28rem] md:h-[44rem]"
+        className="relative w-full flex flex-col items-center h-[33rem] md:h-[44rem]"
         style={{ opacity, filter }}
       >
         <div className="fixed">
@@ -81,7 +81,7 @@ const IndexPage = ({ data }) => {
               </defs>
             </svg>
           </div>
-          <h1 className="text-[1.675em] md:text-5xl xl:text-7xl font-serif text-white text-center leading-9 md:leading-12 xl:leading-[5rem]">
+          <h1 className="container text-[9vw] md:text-[3vw] font-serif text-white text-center leading-[2.5rem] xl:leading-[5rem]">
             I’m Jeff—a designer from <br className="hidden lg:block" />
             New York City enhancing physical
             <br className="hidden lg:block" /> &amp; digital brand experiences.

@@ -6,7 +6,6 @@
   "author": "Jeffrey Herrera <herrera.jeffrey@gmail.com>",
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.2.0",
-    "@tailwindcss/typography": "^0.4.1",
     "framer-motion": "^4.1.17",
     "gatsby": "^3.13.0",
     "gatsby-image": "^3.8.0",
@@ -29,11 +28,12 @@
     "react-outside-click-handler": "^1.3.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.0-alpha.2",
     "autoprefixer": "^10.2.5",
     "gatsby-plugin-postcss": "^4.5.0",
     "postcss": "^8.3.0",
     "prettier": "2.2.1",
-    "tailwindcss": "^2.2.2"
+    "tailwindcss": "^3.0.0-alpha.1"
   },
   "keywords": [
     "gatsby"

@@ -54,16 +54,16 @@ html {
     @apply text-white border-b border-white/30 hover:border-yellow-400 focus:border-yellow-400 transition-all duration-200 hover:text-yellow-400 focus:text-yellow-400;
   }
   .btn {
-    @apply border border-white/40 rounded-full px-3 lg:px-4 py-2 lg:py-2 text-xs md:text-sm text-white hover:border-opacity-100 hover:border-yellow-400 hover:text-yellow-400 focus:border-opacity-100 focus:border-yellow-400 focus:text-yellow-400 transition duration-200 bg-background/70 backdrop-blur;
+    @apply rounded-full px-3 lg:px-4 py-2 lg:py-2 text-xs md:text-sm text-white bg-white/10 hover:bg-white/20 focus:bg-white/20 transition duration-200 backdrop-blur;
   }
   .btn__body {
-    @apply rounded-full px-3 lg:px-4 py-2 lg:py-2 text-xs md:text-sm text-white transition duration-200 bg-white/10 hover:bg-opacity-20 focus:bg-opacity-20 backdrop-filter backdrop-blur;
+    @apply rounded-full px-3 lg:px-4 py-2 lg:py-2 text-xs md:text-sm text-white transition duration-200 bg-white/10 hover:bg-white/20 focus:bg-white/20 backdrop-filter backdrop-blur;
   }
   .btn__sub {
-    @apply border border-white/50 rounded-full px-3 lg:px-4 py-2 lg:py-2 text-xs md:text-sm text-white hover:border-opacity-100 hover:border-yellow-400 hover:text-yellow-400 focus:border-opacity-100 focus:border-yellow-400 focus:text-yellow-400 transition duration-200 bg-gray-600/80 mix-blend-difference backdrop-blur;
+    @apply rounded-full px-3 lg:px-4 py-2 lg:py-2 text-xs md:text-sm text-white hover:bg-white/40 focus:bg-white/40 transition duration-200 bg-white/20 mix-blend-difference backdrop-blur;
   }
   .btn__active {
-    @apply border rounded-full px-3 lg:px-4 py-2 lg:py-2 text-xs md:text-sm border-opacity-100 border-yellow-400 text-yellow-400 bg-yellow-active/70 transition duration-200 backdrop-blur;
+    @apply rounded-full px-3 lg:px-4 py-2 lg:py-2 text-xs md:text-sm text-yellow-400 bg-yellow-400/30 transition duration-200 backdrop-blur pointer-events-none;
   }
   .btn:focus,
   .btn__sub:focus,

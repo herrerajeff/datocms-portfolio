@@ -66,7 +66,7 @@ const Nav = () => {
           ref={node}
           className={
             navOpen
-              ? "btn__active active:outline-none outline-none focus:outline-none"
+              ? "btn__active active:outline-none outline-none focus:outline-none pointer-events-auto"
               : "btn__sub"
           }
         >

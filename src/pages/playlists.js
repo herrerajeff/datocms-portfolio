@@ -24,7 +24,7 @@ const Playlists = ({ data }) => {
             href={randomPlaylist.url}
             target="_blank"
             rel="nofollower noreferrer"
-            className="btn text-sm mt-6 bg-gray-900 py-2 px-4 rounded-full flex-none inline-flex justify-center items-center"
+            className="btn text-sm mt-6 py-2 px-4 rounded-full flex-none inline-flex justify-center items-center border border-white/10"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

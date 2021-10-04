@@ -9,7 +9,7 @@ const Header = ({ siteTitle }) => (
     className="left-1/2 -translate-x-1/2 py-8 w-full text-sm flex-none z-20 container"
     style={{ position: "fixed" }}
   >
-    <div className="flex justify-between md:grid grid-cols-3">
+    <div className="flex justify-between items-center md:grid grid-cols-3">
       <Link
         to="/"
         className="text-yellow-400 justify-self-start hidden md:block"

@@ -52,6 +52,7 @@ module.exports = {
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
+      warmgray: colors.warmGray,
       background: "#000",
     },
     fontFamily: {

@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Designer" />
       <motion.div
-        className="relative w-full flex flex-col items-center h-[31rem] md:h-[44rem]"
+        className="relative w-full flex flex-col items-center h-[29.5rem] md:h-[44rem]"
         style={{ opacity, filter }}
       >
         <div className="md:fixed">

@@ -54,7 +54,7 @@ html {
     @apply text-white border-b border-white/30 hover:border-yellow-400 focus:border-yellow-400 transition-all duration-200 hover:text-yellow-400 focus:text-yellow-400;
   }
   .btn {
-    @apply rounded-full px-5 py-2 text-xs md:text-sm text-white bg-warmgray-700/70 hover:bg-warmgray-500/80 focus:bg-warmgray-500/80 transition duration-200 backdrop-blur;
+    @apply rounded-full px-5 py-2 text-xs md:text-sm text-white bg-warmgray-800/70 hover:bg-warmgray-500/80 focus:bg-warmgray-500/80 transition duration-200 backdrop-blur;
   }
   .btn__body {
     @apply rounded-full px-5 py-2 text-xs md:text-sm text-white transition duration-200 bg-white/10 hover:bg-white/20 focus:bg-white/20 backdrop-filter backdrop-blur;

@@ -2,8 +2,8 @@ const colors = require("tailwindcss/colors")
 
 module.exports = {
   mode: "jit",
-  purge: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
-  darkMode: false, // or 'media' or 'class'
+  content: ["./public/**/*.html", "./src/**/*.{js,jsx,ts,tsx,vue}"],
+  media: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -48,11 +48,11 @@ module.exports = {
       current: "currentColor",
       black: colors.black,
       white: colors.white,
-      gray: colors.trueGray,
+      gray: colors.neutral,
       indigo: colors.indigo,
       red: colors.rose,
       yellow: colors.amber,
-      warmgray: colors.warmGray,
+      warmgray: colors.stone,
       background: "#000",
     },
     fontFamily: {

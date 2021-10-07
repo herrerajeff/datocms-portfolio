@@ -50,7 +50,7 @@ const Nav = () => {
     }
   }, [])
   return (
-    <nav className="md:space-x-3 w-full px-8 md:w-auto flex  justify-between md:justify-self-center col-span-2 md:col-span-1 mix-blend-exclusion">
+    <nav className="space-x-3 w-full px-8 md:w-auto flex justify-center md:justify-self-center col-span-2 md:col-span-1 mix-blend-exclusion">
       <Link className="btn" activeClassName="btn__active" to="/">
         Work
       </Link>

@@ -14,32 +14,26 @@ const Home = ({ data }) => {
     <Layout>
       <Seo title="Casa" />
       <div className="container md:mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start overflow-hidden">
-          <div className="grid grid-rows-auto bg-gray-900/30 hover:bg-yellow-400/10 transition duration-300 rounded-xl pb-4 border border-white/10 first:rounded-xl group">
-            <h2 className="mb-4 p-4 border-b border-white/10 group-hover:text-yellow-400 transition duration-300">
-              Design
-            </h2>
-            <div className="grid grid-cols-2 grid-rows-auto gap-4 py-4 px-6">
+        <div className="grid gap-8">
+          <div className="w-full group">
+            <h2>Design</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 py-4">
               {design.map(link => {
                 return <CasaCard url={link.url} name={link.title} />
               })}
             </div>
           </div>
-          <div className="grid grid-rows-auto bg-gray-900/30 hover:bg-yellow-400/10 transition duration-300 rounded-xl pb-4 border border-white/10 group">
-            <h2 className="mb-4 p-4 border-b border-white/10 group-hover:text-yellow-400 transition duration-300">
-              Misc
-            </h2>
-            <div className="grid grid-cols-2 grid-rows-auto gap-4 py-4 px-6">
+          <div className="w-full group">
+            <h2>Misc</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 py-4">
               {misc.map(link => {
                 return <CasaCard url={link.url} name={link.title} />
               })}
             </div>
           </div>
-          <div className="grid grid-rows-auto bg-gray-900/30 hover:bg-yellow-400/10 transition duration-300 rounded-xl pb-4 border border-white/10 group">
-            <h2 className="mb-4 p-4 border-b border-white/10 group-hover:text-yellow-400 transition duration-300">
-              Dev
-            </h2>
-            <div className="grid grid-cols-2 grid-rows-auto gap-4 py-4 px-6">
+          <div className="w-full group">
+            <h2>Dev</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 py-4">
               {dev.map(link => {
                 return <CasaCard url={link.url} name={link.title} />
               })}

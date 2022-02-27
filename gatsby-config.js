@@ -1,6 +1,9 @@
 require("dotenv").config()
 
 module.exports = {
+  flags: {
+    PARALLEL_QUERY_RUNNING: true,
+  },
   siteMetadata: {
     title: `Jeffrey Herrera`,
     titleTemplate: "%s → Jeffrey Herrera",

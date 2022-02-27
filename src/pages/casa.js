@@ -13,7 +13,7 @@ const Home = ({ data }) => {
   return (
     <Layout>
       <Seo title="Casa" />
-      <div className="container md:mt-24">
+      <div className="container md:mt-12">
         <div className="grid gap-16 sm:grid-cols-3">
           <div className="group w-full">
             <h2>Design</h2>

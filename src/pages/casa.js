@@ -14,26 +14,26 @@ const Home = ({ data }) => {
     <Layout>
       <Seo title="Casa" />
       <div className="container md:mt-24">
-        <div className="grid sm:grid-cols-3 gap-8">
-          <div className="w-full group">
+        <div className="grid gap-16 sm:grid-cols-3">
+          <div className="group w-full">
             <h2>Design</h2>
-            <div className="grid lg:grid-cols-2 gap-3 py-4">
+            <div className="grid gap-3 py-4 lg:grid-cols-2">
               {design.map(link => {
                 return <CasaCard url={link.url} name={link.title} />
               })}
             </div>
           </div>
-          <div className="w-full group">
+          <div className="group w-full">
             <h2>Misc</h2>
-            <div className="grid lg:grid-cols-2 gap-3 py-4">
+            <div className="grid gap-3 py-4 lg:grid-cols-2">
               {misc.map(link => {
                 return <CasaCard url={link.url} name={link.title} />
               })}
             </div>
           </div>
-          <div className="w-full group">
+          <div className="group w-full">
             <h2>Dev</h2>
-            <div className="grid lg:grid-cols-2 gap-3 py-4">
+            <div className="grid gap-3 py-4 lg:grid-cols-2">
               {dev.map(link => {
                 return <CasaCard url={link.url} name={link.title} />
               })}

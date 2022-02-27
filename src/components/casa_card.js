@@ -7,7 +7,7 @@ const CasaCard = ({ url, name }) => {
       target="_blank"
       rel="noreferrer nofollower"
       to="/"
-      className="text-xs font-medium tracking-wider px-3 py-2 rounded-full bg-white/5 hover:text-white hover:bg-white/20 transition duration-300 flex items-center"
+      className="text-sm font-medium tracking-wider px-3 py-2 rounded bg-white/5 hover:text-black hover:bg-white/90 transition duration-150 flex items-center"
     >
       <img
         src={`https://www.google.com/s2/favicons?domain_url=${url}`}

@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PlaylistCard from "../components/playlist_card"
+import YearCard from "../components/year_card"
 
 const Playlists = ({ data }) => {
   const playlist = data.allDatoCmsPlaylist.nodes
@@ -15,7 +16,7 @@ const Playlists = ({ data }) => {
       <Seo title="Playlists" image={latestPlaylist.cover.url} />
       <div className="container mt-12 2xl:mt-20">
         <div className="mx-auto text-center">
-          <h1 className="text-yellow-400 mb-4">Playlists</h1>
+          <h1 className="mb-4 text-yellow-400">Playlists</h1>
           <p className="text-base md:text-xl">
             This is the music that keeps me going. <br className="md:hidden" />
             Let's jam.
@@ -24,11 +25,11 @@ const Playlists = ({ data }) => {
             href={randomPlaylist.url}
             target="_blank"
             rel="nofollower noreferrer"
-            className="btn text-sm mt-6 py-2 px-4 rounded-full flex-none inline-flex justify-center items-center border border-white/10"
+            className="btn mt-6 inline-flex flex-none items-center justify-center rounded-full border border-white/10 py-2 px-4 text-sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 mr-2"
+              className="mr-2 h-5 w-5"
               aria-hidden="true"
               viewBox="0 0 640 512"
             >
@@ -40,17 +41,77 @@ const Playlists = ({ data }) => {
             Feeling Lucky? Roll the dice.
           </a>
         </div>
-        <div className="mt-12 md:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-12">
-          {playlist.map(playlist => {
-            return (
-              <PlaylistCard
-                url={playlist.url}
-                title={playlist.title}
-                featured={playlist.featured}
-                cover={playlist.cover.gatsbyImageData}
-              />
-            )
-          })}
+        <div className="mt-12 grid grid-cols-1 gap-12 md:mt-24 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <YearCard year="2022" />
+          {playlist
+            .filter(playlist => playlist.date.includes("2022"))
+            .map(playlist => {
+              return (
+                <PlaylistCard
+                  url={playlist.url}
+                  title={playlist.title}
+                  featured={playlist.featured}
+                  cover={playlist.cover.gatsbyImageData}
+                  key={playlist.url}
+                />
+              )
+            })}
+          <YearCard year="2021" />
+          {playlist
+            .filter(playlist => playlist.date.includes("2021"))
+            .map(playlist => {
+              return (
+                <PlaylistCard
+                  url={playlist.url}
+                  title={playlist.title}
+                  featured={playlist.featured}
+                  cover={playlist.cover.gatsbyImageData}
+                  key={playlist.url}
+                />
+              )
+            })}
+          <YearCard year="2020" />
+          {playlist
+            .filter(playlist => playlist.date.includes("2020"))
+            .map(playlist => {
+              return (
+                <PlaylistCard
+                  url={playlist.url}
+                  title={playlist.title}
+                  featured={playlist.featured}
+                  cover={playlist.cover.gatsbyImageData}
+                  key={playlist.url}
+                />
+              )
+            })}
+          <YearCard year="2019" />
+          {playlist
+            .filter(playlist => playlist.date.includes("2019"))
+            .map(playlist => {
+              return (
+                <PlaylistCard
+                  url={playlist.url}
+                  title={playlist.title}
+                  featured={playlist.featured}
+                  cover={playlist.cover.gatsbyImageData}
+                  key={playlist.url}
+                />
+              )
+            })}
+          <YearCard year="2018" />
+          {playlist
+            .filter(playlist => playlist.date.includes("2018"))
+            .map(playlist => {
+              return (
+                <PlaylistCard
+                  url={playlist.url}
+                  title={playlist.title}
+                  featured={playlist.featured}
+                  cover={playlist.cover.gatsbyImageData}
+                  key={playlist.url}
+                />
+              )
+            })}
         </div>
       </div>
     </Layout>

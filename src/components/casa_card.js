@@ -12,7 +12,7 @@ const CasaCard = ({ url, name }) => {
     >
       <img
         src={`https://icon.horse/icon/?uri=${url}`}
-        className="mr-3 block h-7 w-7 bg-white object-contain py-1 pl-2 pr-1"
+        className="mr-3 block h-7 w-7 rounded-full bg-white object-contain p-[0.5rem]"
         alt="favicon"
       />
       {name}

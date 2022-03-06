@@ -16,7 +16,9 @@ const Home = ({ data }) => {
       <div className="container md:mt-12">
         <div className="grid gap-12 sm:grid-cols-3">
           <div className="group w-full rounded-xl border border-white/10 px-4 py-2 transition-colors duration-200 hover:bg-white/5">
-            <h2>Design</h2>
+            <h2 className="mb-1 border-b border-white/10 pb-2 text-xl font-black uppercase text-yellow-400">
+              Design
+            </h2>
             <div className="grid gap-5 py-4 lg:grid-cols-2">
               {design.map(link => {
                 return <CasaCard url={link.url} name={link.title} />
@@ -24,7 +26,9 @@ const Home = ({ data }) => {
             </div>
           </div>
           <div className="group w-full rounded-xl border border-white/10 px-4 py-2 transition-colors duration-200 hover:bg-white/5">
-            <h2>Misc</h2>
+            <h2 className="mb-1 border-b border-white/10 pb-2 text-xl font-black uppercase text-yellow-400">
+              Misc
+            </h2>
             <div className="grid gap-5 py-4 lg:grid-cols-2">
               {misc.map(link => {
                 return <CasaCard url={link.url} name={link.title} />
@@ -32,7 +36,9 @@ const Home = ({ data }) => {
             </div>
           </div>
           <div className="group w-full rounded-xl border border-white/10 px-4 py-2 transition-colors duration-200 hover:bg-white/5">
-            <h2>Dev</h2>
+            <h2 className="mb-1 border-b border-white/10 pb-2 text-xl font-black uppercase text-yellow-400">
+              Dev
+            </h2>
             <div className="grid gap-5 py-4 lg:grid-cols-2">
               {dev.map(link => {
                 return <CasaCard url={link.url} name={link.title} />

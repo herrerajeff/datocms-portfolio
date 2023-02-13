@@ -42,6 +42,20 @@ const Playlists = ({ data }) => {
           </a>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-12 md:mt-24 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <YearCard year="2023" />
+          {playlist
+            .filter(playlist => playlist.date.includes("2023"))
+            .map(playlist => {
+              return (
+                <PlaylistCard
+                  url={playlist.url}
+                  title={playlist.title}
+                  featured={playlist.featured}
+                  cover={playlist.cover.gatsbyImageData}
+                  key={playlist.url}
+                />
+              )
+            })}
           <YearCard year="2022" />
           {playlist
             .filter(playlist => playlist.date.includes("2022"))
